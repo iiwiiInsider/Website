@@ -1,0 +1,32 @@
+[
+  {
+    "id": "mjwsw8g2",
+    "email": "test@example.com",
+    "name": "Test User",
+    "passwordHash": "$2a$10$3TPFFW6ddK6nkopo/lCQie9Rxe7s0o8N22FEJd0/HCmia6gW7dfmy"
+  },
+  {
+    "id": "mjwtdpxn",
+    "email": "kdbburns.za@gmail.com",
+    "name": "",
+    "passwordHash": "$2a$10$sGgFYheg186dYIX4vbWRkum0CpgkDadoVxyn3GYTP4JFW5m645YHO"
+  },
+  {
+    "id": "admin-local",
+    "email": "admin@local.test",
+    "name": "Admin",
+    "passwordHash": "$2a$10$Yz/RpGOJwrT6HJaWcUxIb.KYG6SPqMpPivRBeDTu/K/svBIqdw45a"
+  },
+  {
+    "id": "user1-local",
+    "email": "user1@local.test",
+    "name": "User1",
+    "passwordHash": "$2a$10$J8v7f4IwlivN3btvzs6ZoOR0KzIbtiXfUqlsJQVKaC5qWN/F/b5o2"
+  },
+  {
+    "id": "mjww4s4a",
+    "email": "kdbburns.social@gmail.com",
+    "name": "",
+    "passwordHash": "$2a$10$ckfdf6lrlQGvE6KsAUkcn.AX9m2Y8QNLvIUFpme73uKbL05rKZ.5i"
+  }
+]

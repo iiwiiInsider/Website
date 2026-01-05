@@ -1,0 +1,18 @@
+[
+  {
+    "id": "u_mjyoj1km3wkp",
+    "listingType": "sell",
+    "title": "A Empty Picture",
+    "description": "I didn't get one either",
+    "neighborhood": "New York",
+    "city": "Westchester",
+    "price": 2500000,
+    "priceInput": 2500000,
+    "currency": "ZAR",
+    "imageDataUrls": [],
+    "imageDataUrl": null,
+    "ownerEmail": "admin@local.test",
+    "createdAt": "2026-01-03T19:12:03.766Z",
+    "updatedAt": "2026-01-03T19:27:51.307Z"
+  }
+]

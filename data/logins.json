@@ -1,0 +1,439 @@
+{
+  "anonymous": [],
+  "authenticated": [
+    {
+      "email": "admin@local.test",
+      "id": "admin-local",
+      "time": "2026-01-03T10:01:02.350Z",
+      "source": "server-signin"
+    },
+    {
+      "email": "admin@local.test",
+      "userId": null,
+      "loggedIn": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "platform": "Win32",
+      "screen": {
+        "width": 1536,
+        "height": 864
+      },
+      "innerSize": {
+        "w": 767,
+        "h": 743
+      },
+      "language": "en-GB",
+      "ip": "::1",
+      "time": "2026-01-03T10:01:02.522Z",
+      "source": "group-admin"
+    },
+    {
+      "email": "admin@local.test",
+      "userId": null,
+      "loggedIn": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.107.1 Chrome/142.0.7444.175 Electron/39.2.3 Safari/537.36",
+      "platform": "Win32",
+      "screen": {
+        "width": 1920,
+        "height": 1080
+      },
+      "innerSize": {
+        "w": 1272,
+        "h": 546
+      },
+      "language": "en-US",
+      "ip": "::ffff:127.0.0.1",
+      "time": "2026-01-03T10:07:32.542Z",
+      "source": "group-admin"
+    },
+    {
+      "email": "admin@local.test",
+      "userId": null,
+      "loggedIn": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.107.1 Chrome/142.0.7444.175 Electron/39.2.3 Safari/537.36",
+      "platform": "Win32",
+      "screen": {
+        "width": 1920,
+        "height": 1080
+      },
+      "innerSize": {
+        "w": 1272,
+        "h": 546
+      },
+      "language": "en-US",
+      "ip": "::ffff:127.0.0.1",
+      "time": "2026-01-03T10:07:37.110Z",
+      "source": "group-admin"
+    },
+    {
+      "email": "user1@local.test",
+      "userId": null,
+      "loggedIn": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.107.1 Chrome/142.0.7444.175 Electron/39.2.3 Safari/537.36",
+      "platform": "Win32",
+      "screen": {
+        "width": 1920,
+        "height": 1080
+      },
+      "innerSize": {
+        "w": 1272,
+        "h": 546
+      },
+      "language": "en-US",
+      "ip": "::ffff:127.0.0.1",
+      "time": "2026-01-03T10:07:42.343Z",
+      "source": "group-user1"
+    },
+    {
+      "email": "admin@local.test",
+      "userId": null,
+      "loggedIn": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.107.1 Chrome/142.0.7444.175 Electron/39.2.3 Safari/537.36",
+      "platform": "Win32",
+      "screen": {
+        "width": 1920,
+        "height": 1080
+      },
+      "innerSize": {
+        "w": 1272,
+        "h": 546
+      },
+      "language": "en-US",
+      "ip": "::ffff:127.0.0.1",
+      "time": "2026-01-03T10:07:48.063Z",
+      "source": "group-admin"
+    },
+    {
+      "email": "admin@local.test",
+      "userId": null,
+      "loggedIn": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.107.1 Chrome/142.0.7444.175 Electron/39.2.3 Safari/537.36",
+      "platform": "Win32",
+      "screen": {
+        "width": 1920,
+        "height": 1080
+      },
+      "innerSize": {
+        "w": 1272,
+        "h": 546
+      },
+      "language": "en-US",
+      "ip": "::ffff:127.0.0.1",
+      "time": "2026-01-03T10:09:16.486Z",
+      "source": "group-admin"
+    },
+    {
+      "email": "admin@local.test",
+      "userId": null,
+      "loggedIn": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.107.1 Chrome/142.0.7444.175 Electron/39.2.3 Safari/537.36",
+      "platform": "Win32",
+      "screen": {
+        "width": 1920,
+        "height": 1080
+      },
+      "innerSize": {
+        "w": 1272,
+        "h": 546
+      },
+      "language": "en-US",
+      "ip": "::ffff:127.0.0.1",
+      "time": "2026-01-03T10:22:13.729Z",
+      "source": "group-admin"
+    },
+    {
+      "email": "admin@local.test",
+      "userId": null,
+      "loggedIn": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.107.1 Chrome/142.0.7444.175 Electron/39.2.3 Safari/537.36",
+      "platform": "Win32",
+      "screen": {
+        "width": 1920,
+        "height": 1080
+      },
+      "innerSize": {
+        "w": 1272,
+        "h": 546
+      },
+      "language": "en-US",
+      "ip": "::ffff:127.0.0.1",
+      "time": "2026-01-03T10:22:28.341Z",
+      "source": "group-admin"
+    },
+    {
+      "email": "admin@local.test",
+      "userId": null,
+      "loggedIn": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.107.1 Chrome/142.0.7444.175 Electron/39.2.3 Safari/537.36",
+      "platform": "Win32",
+      "screen": {
+        "width": 1920,
+        "height": 1080
+      },
+      "innerSize": {
+        "w": 1272,
+        "h": 546
+      },
+      "language": "en-US",
+      "ip": "::1",
+      "time": "2026-01-03T10:25:22.244Z",
+      "source": "group-admin"
+    },
+    {
+      "email": "admin@local.test",
+      "id": "admin-local",
+      "time": "2026-01-03T10:25:30.321Z",
+      "source": "server-signin"
+    },
+    {
+      "email": "admin@local.test",
+      "userId": null,
+      "loggedIn": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "platform": "Win32",
+      "screen": {
+        "width": 1536,
+        "height": 864
+      },
+      "innerSize": {
+        "w": 1536,
+        "h": 742
+      },
+      "language": "en-GB",
+      "ip": "::ffff:127.0.0.1",
+      "time": "2026-01-03T10:25:30.391Z",
+      "source": "group-admin"
+    },
+    {
+      "email": "admin@local.test",
+      "userId": "admin-local",
+      "loggedIn": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "platform": "Win32",
+      "screen": {
+        "width": 1536,
+        "height": 864
+      },
+      "innerSize": {
+        "w": 1536,
+        "h": 742
+      },
+      "language": "en-GB",
+      "ip": "::ffff:127.0.0.1",
+      "time": "2026-01-03T10:25:30.397Z",
+      "source": "session-detect"
+    },
+    {
+      "email": "admin@local.test",
+      "userId": null,
+      "loggedIn": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.107.1 Chrome/142.0.7444.175 Electron/39.2.3 Safari/537.36",
+      "platform": "Win32",
+      "screen": {
+        "width": 1920,
+        "height": 1080
+      },
+      "innerSize": {
+        "w": 1272,
+        "h": 546
+      },
+      "language": "en-US",
+      "ip": "::ffff:127.0.0.1",
+      "time": "2026-01-03T10:27:39.078Z",
+      "source": "group-admin"
+    },
+    {
+      "email": "admin@local.test",
+      "id": "admin-local",
+      "time": "2026-01-03T10:27:46.308Z",
+      "source": "server-signin"
+    },
+    {
+      "email": "admin@local.test",
+      "userId": null,
+      "loggedIn": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "platform": "Win32",
+      "screen": {
+        "width": 1536,
+        "height": 864
+      },
+      "innerSize": {
+        "w": 1536,
+        "h": 742
+      },
+      "language": "en-GB",
+      "ip": "::1",
+      "time": "2026-01-03T10:27:46.349Z",
+      "source": "group-admin"
+    },
+    {
+      "email": "admin@local.test",
+      "id": "admin-local",
+      "time": "2026-01-03T10:30:19.598Z",
+      "source": "server-signin"
+    },
+    {
+      "email": "admin@local.test",
+      "userId": null,
+      "loggedIn": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "platform": "Win32",
+      "screen": {
+        "width": 1536,
+        "height": 864
+      },
+      "innerSize": {
+        "w": 1536,
+        "h": 742
+      },
+      "language": "en-GB",
+      "ip": "::ffff:127.0.0.1",
+      "time": "2026-01-03T10:30:19.773Z",
+      "source": "group-admin"
+    },
+    {
+      "email": "admin@local.test",
+      "userId": null,
+      "loggedIn": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.107.1 Chrome/142.0.7444.175 Electron/39.2.3 Safari/537.36",
+      "platform": "Win32",
+      "screen": {
+        "width": 1920,
+        "height": 1080
+      },
+      "innerSize": {
+        "w": 1272,
+        "h": 546
+      },
+      "language": "en-US",
+      "ip": "::ffff:127.0.0.1",
+      "time": "2026-01-03T10:37:08.085Z",
+      "source": "group-admin"
+    },
+    {
+      "email": "admin@local.test",
+      "id": "admin-local",
+      "time": "2026-01-03T10:38:00.814Z",
+      "source": "server-signin"
+    },
+    {
+      "email": "admin@local.test",
+      "userId": null,
+      "loggedIn": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "platform": "Win32",
+      "screen": {
+        "width": 1536,
+        "height": 864
+      },
+      "innerSize": {
+        "w": 1536,
+        "h": 742
+      },
+      "language": "en-GB",
+      "ip": "::ffff:127.0.0.1",
+      "time": "2026-01-03T10:38:00.887Z",
+      "source": "group-admin"
+    },
+    {
+      "email": "admin@local.test",
+      "id": "admin-local",
+      "time": "2026-01-03T16:43:20.920Z",
+      "source": "server-signin"
+    },
+    {
+      "email": "admin@local.test",
+      "userId": null,
+      "loggedIn": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "platform": "Win32",
+      "screen": {
+        "width": 1536,
+        "height": 864
+      },
+      "innerSize": {
+        "w": 1536,
+        "h": 742
+      },
+      "language": "en-GB",
+      "ip": "::1",
+      "time": "2026-01-03T16:43:21.171Z",
+      "source": "group-admin"
+    },
+    {
+      "email": "admin@local.test",
+      "id": "admin-local",
+      "time": "2026-01-04T11:54:51.294Z",
+      "source": "server-signin"
+    },
+    {
+      "email": "admin@local.test",
+      "userId": null,
+      "loggedIn": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "platform": "Win32",
+      "screen": {
+        "width": 1536,
+        "height": 864
+      },
+      "innerSize": {
+        "w": 1536,
+        "h": 742
+      },
+      "language": "en-GB",
+      "ip": "127.0.0.1",
+      "time": "2026-01-04T11:54:51.525Z",
+      "source": "group-admin"
+    },
+    {
+      "email": "admin@local.test",
+      "id": "admin-local",
+      "time": "2026-01-05T11:50:31.684Z",
+      "source": "server-signin"
+    },
+    {
+      "email": "admin@local.test",
+      "userId": null,
+      "loggedIn": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "platform": "Win32",
+      "screen": {
+        "width": 1920,
+        "height": 1080
+      },
+      "innerSize": {
+        "w": 2560,
+        "h": 1276
+      },
+      "language": "en-GB",
+      "ip": "::1",
+      "time": "2026-01-05T11:50:31.926Z",
+      "source": "group-admin"
+    },
+    {
+      "email": "admin@local.test",
+      "id": "admin-local",
+      "time": "2026-01-05T14:05:13.009Z",
+      "source": "server-signin"
+    },
+    {
+      "email": "admin@local.test",
+      "userId": null,
+      "loggedIn": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "platform": "Win32",
+      "screen": {
+        "width": 1536,
+        "height": 864
+      },
+      "innerSize": {
+        "w": 2048,
+        "h": 989
+      },
+      "language": "en-GB",
+      "ip": "::1",
+      "time": "2026-01-05T14:05:13.382Z",
+      "source": "group-admin"
+    }
+  ]
+}

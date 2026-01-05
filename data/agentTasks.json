@@ -1,0 +1,23 @@
+[
+  {
+    "id": "task_1767469178357_d6a3001f1c42f",
+    "assignedToEmail": "admin@local.test",
+    "createdByEmail": "admin@local.test",
+    "status": "done",
+    "title": "Do My webpage Properly",
+    "priority": "normal",
+    "timeZone": "Africa/Johannesburg",
+    "dueDate": "2028-01-01",
+    "fields": {
+      "clientName": "Kyle",
+      "clientEmail": "Kdbburns.za@gmail.com",
+      "clientPhone": "0769526266",
+      "propertyId": "N/A",
+      "listingTitle": "A empty picture",
+      "instructions": "Buy me a coastel house valued at 6.1-6.6 million.",
+      "notes": "Make sure the cash keeps flowing."
+    },
+    "createdAt": "2026-01-03T19:39:38.357Z",
+    "updatedAt": "2026-01-03T19:41:23.169Z"
+  }
+]

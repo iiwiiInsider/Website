@@ -1,0 +1,100 @@
+[
+  {
+    "id": "a_mjypkr534wlg",
+    "at": "2026-01-03T19:41:23.175Z",
+    "actorEmail": "admin@local.test",
+    "action": "AGENT_TASK_STATUS",
+    "targetType": "agent-task",
+    "targetId": "task_1767469178357_d6a3001f1c42f",
+    "data": {
+      "status": "done"
+    }
+  },
+  {
+    "id": "a_mjypii9l1w5w",
+    "at": "2026-01-03T19:39:38.361Z",
+    "actorEmail": "admin@local.test",
+    "action": "AGENT_TASK_CREATE",
+    "targetType": "agent-task",
+    "targetId": "task_1767469178357_d6a3001f1c42f",
+    "data": {
+      "assignedToEmail": "admin@local.test",
+      "title": "Do My webpage Properly",
+      "priority": "normal"
+    }
+  },
+  {
+    "id": "a_mjyok3a68149",
+    "at": "2026-01-03T19:12:52.638Z",
+    "actorEmail": "admin@local.test",
+    "action": "CLAIM_CREATED",
+    "targetType": "property",
+    "targetId": "u_mjyoj1km3wkp",
+    "data": {
+      "agentEmail": "admin@local.test"
+    }
+  },
+  {
+    "id": "a_mjyofzjr8veo",
+    "at": "2026-01-03T19:09:41.175Z",
+    "actorEmail": "admin@local.test",
+    "action": "AGENT_PROFILE_SAVE",
+    "targetType": "agent",
+    "targetId": "admin@local.test",
+    "data": {
+      "displayName": "Kyle Blackburn",
+      "agency": "GlassProjects",
+      "agentEmail": "kdbburns.social@gmail.com"
+    }
+  },
+  {
+    "id": "a_mjyofl3eq6y1",
+    "at": "2026-01-03T19:09:22.442Z",
+    "actorEmail": "admin@local.test",
+    "action": "AGENT_PROFILE_SAVE",
+    "targetType": "agent",
+    "targetId": "admin@local.test",
+    "data": {
+      "displayName": "Kyle Blackburn",
+      "agency": "GlassProjects",
+      "agentEmail": "kdbburns.social@gmail.com"
+    }
+  },
+  {
+    "id": "a_mjyofh2w72ke",
+    "at": "2026-01-03T19:09:17.240Z",
+    "actorEmail": "admin@local.test",
+    "action": "AGENT_PROFILE_SAVE",
+    "targetType": "agent",
+    "targetId": "admin@local.test",
+    "data": {
+      "displayName": "Kyle Blackburn",
+      "agency": "GlassProjects",
+      "agentEmail": "kdbburns.social@gmail.com"
+    }
+  },
+  {
+    "id": "a_mjyjid852kym",
+    "at": "2026-01-03T16:51:34.133Z",
+    "actorEmail": "admin@local.test",
+    "action": "CLAIM_CREATED",
+    "targetType": "property",
+    "targetId": "u_mjyjhvbw11b5",
+    "data": {
+      "agentEmail": "admin@local.test"
+    }
+  },
+  {
+    "id": "a_mjy5yla3rr6e",
+    "at": "2026-01-03T10:32:16.443Z",
+    "actorEmail": "admin@local.test",
+    "action": "AGENT_PROFILE_SAVE",
+    "targetType": "agent",
+    "targetId": "admin@local.test",
+    "data": {
+      "displayName": "CEO Kyle Blackburn",
+      "agency": "BBRealCupofT",
+      "agentEmail": "adminagentemail@mail.com"
+    }
+  }
+]
