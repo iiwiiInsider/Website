@@ -1,9 +1,13 @@
 import Link from 'next/link'
+import Head from 'next/head'
 import Navbar from '../components/Navbar'
 
 export default function About(){
   return (
     <div>
+      <Head>
+        <title>About Us - BurnProjects Marketplace</title>
+      </Head>
       <Navbar />
 
       <main className="container landing">

@@ -1,9 +1,13 @@
 import Link from 'next/link'
+import Head from 'next/head'
 import Navbar from '../components/Navbar'
 
 export default function Home(){
   return (
     <div>
+      <Head>
+        <title>BurnProjects Marketplace - Buy and Sell Items Online</title>
+      </Head>
       <Navbar />
 
       <main className="container landing">
@@ -34,7 +38,7 @@ export default function Home(){
               <Link href="/market">Market</Link>
               <Link href="/login">Sign in</Link>
               <Link href="/admin-login" style={{color:'#ff3b3b',fontWeight:700}}>Admin</Link>
-              <a href="mailto:support@local.test">Contact Us</a>
+              <a href="mailto:support@burnprojects.com">Contact Us</a>
             </div>
           </div>
         </footer>

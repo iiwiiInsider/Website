@@ -1,85 +1,5 @@
 import '../styles/globals.css'
-import { SessionProvider, useSession } from 'next-auth/react'
-import { WebcamProvider } from '../components/WebcamContext'
 import { useEffect } from 'react'
-import { useRouter } from 'next/router'
-
-function SessionTracker(){
-  const { data: session, status } = useSession()
-
-  useEffect(()=>{
-    if(status === 'authenticated' && session?.user?.email){
-      const key = 'lastTrackedEmail'
-      const last = typeof window !== 'undefined' ? window.localStorage.getItem(key) : null
-      if(last === session.user.email) return // already tracked this session in this browser
-      (async ()=>{
-        try{
-          const payload = {
-            loggedIn: true,
-            email: session.user.email,
-            userId: session.user.id || null,
-            userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : null,
-            platform: typeof navigator !== 'undefined' ? navigator.platform : null,
-            screen: typeof screen !== 'undefined' ? {width: screen.width, height: screen.height} : null,
-            innerSize: typeof window !== 'undefined' ? {w: window.innerWidth, h: window.innerHeight} : null,
-            language: typeof navigator !== 'undefined' ? navigator.language : null,
-            timestamp: new Date().toISOString(),
-            source: 'session-detect'
-          }
-          await fetch('/api/tracking/login', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(payload) }).catch(()=>null)
-          try{ window.localStorage.setItem(key, session.user.email) }catch(e){}
-        }catch(e){ console.error('Session tracking failed', e) }
-      })()
-    }
-  },[status, session])
-
-  return null
-}
-
-function PageViewTracker(){
-  const { data: session, status } = useSession()
-  const router = useRouter()
-
-  useEffect(()=>{
-    if(status !== 'authenticated' || !session?.user?.email) return
-
-    const trackPageView = async (url) => {
-      try{
-        const payload = {
-          email: session.user.email,
-          userId: session.user.id || null,
-          page: url,
-          referrer: typeof document !== 'undefined' ? document.referrer : null,
-          userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : null,
-          timestamp: new Date().toISOString()
-        }
-        await fetch('/api/tracking/page-view', {
-          method: 'POST',
-          headers: {'Content-Type':'application/json'},
-          body: JSON.stringify(payload)
-        }).catch(()=>null)
-      }catch(e){
-        console.error('Page view tracking failed', e)
-      }
-    }
-
-    // Track initial page load
-    trackPageView(router.pathname)
-
-    // Track route changes
-    const handleRouteChange = (url) => {
-      trackPageView(url)
-    }
-
-    router.events.on('routeChangeComplete', handleRouteChange)
-
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChange)
-    }
-  },[status, session, router.pathname, router.events])
-
-  return null
-}
 
 function BackgroundPointerTracker(){
   useEffect(()=>{
@@ -119,15 +39,11 @@ function BackgroundPointerTracker(){
   return null
 }
 
-export default function App({ Component, pageProps: { session, ...pageProps } }) {
+export default function App({ Component, pageProps }) {
   return (
-    <SessionProvider session={session}>
-      <WebcamProvider>
-        <BackgroundPointerTracker />
-        <SessionTracker />
-        <PageViewTracker />
-        <Component {...pageProps} />
-      </WebcamProvider>
-    </SessionProvider>
+    <>
+      <BackgroundPointerTracker />
+      <Component {...pageProps} />
+    </>
   )
 }

@@ -1,318 +1,136 @@
 import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
-import { useSession } from 'next-auth/react'
+import { useState, useEffect } from 'react'
+import Head from 'next/head'
 import properties from '../../data/properties'
 import Navbar from '../../components/Navbar'
-import { formatFromZar, normalizeCurrencyCode } from '../../lib/currency'
+import Link from 'next/link'
 
 export default function PropertyDetail(){
   const router = useRouter()
   const { id } = router.query
-  const { data: session } = useSession()
-  const [claim, setClaim] = useState(null)
-  const [loadingClaim, setLoadingClaim] = useState(false)
   const [listing, setListing] = useState(null)
-  const [loadingListing, setLoadingListing] = useState(false)
-  const [displayCurrency, setDisplayCurrency] = useState('ZAR')
-  const [agentRatings, setAgentRatings] = useState(null)
-  const [showTransaction, setShowTransaction] = useState(false)
-  const [transactionLoading, setTransactionLoading] = useState(false)
-  const staticListing = properties.find(p => String(p.id) === String(id))
 
-  useEffect(()=>{
-    try{
-      const saved = localStorage.getItem('displayCurrency')
-      if(saved) setDisplayCurrency(normalizeCurrencyCode(saved))
-    }catch{
-      // ignore
-    }
-  },[])
-
-  useEffect(()=>{
-    if(!id) return
-    if(staticListing){
-      setListing(staticListing)
-      return
-    }
-    setLoadingListing(true)
-    fetch('/api/market/listings')
-      .then(r=>r.json())
-      .then(d=>{
-        const all = Array.isArray(d?.listings) ? d.listings : []
-        const found = all.find(x => String(x.id) === String(id))
-        setListing(found || null)
-      })
-      .catch(()=>setListing(null))
-      .finally(()=>setLoadingListing(false))
-  },[id, staticListing])
-
-  useEffect(()=>{
-    if(!id) return
-    setLoadingClaim(true)
-    fetch(`/api/claims/status?propertyId=${encodeURIComponent(String(id))}`)
-      .then(r=>r.json())
-      .then(d=>setClaim(d?.claim || null))
-      .catch(()=>setClaim(null))
-      .finally(()=>setLoadingClaim(false))
-  },[id])
-
-  // Load agent ratings when claim is resolved
   useEffect(() => {
-    if (!claim?.agentEmail) {
-      setAgentRatings(null)
-      return
-    }
-
-    fetch(`/api/ratings/agent?email=${encodeURIComponent(claim.agentEmail)}`)
-      .then(r => r.json())
-      .then(d => setAgentRatings(d))
-      .catch(() => setAgentRatings(null))
-  }, [claim?.agentEmail])
+    if(!id) return
+    const found = properties.find(p => String(p.id) === String(id))
+    setListing(found || null)
+  }, [id])
 
   if(!listing){
     return (
       <div>
+        <Head>
+          <title>Property Not Found - BurnProjects Marketplace</title>
+        </Head>
         <Navbar />
-        <div className="container">
+        <div className="container" style={{marginTop:32}}>
           <div className="card">
-            <h3 style={{marginTop:0}}>{loadingListing ? 'Loading…' : 'Property not found'}</h3>
-            <button className="btn btn-outline" onClick={()=>router.push('/market')}>Back to Market</button>
+            <h3 style={{marginTop:0}}>Property not found</h3>
+            <Link href="/market">
+              <button className="btn btn-outline">Back to Market</button>
+            </Link>
           </div>
         </div>
       </div>
     )
   }
 
-  const normalizePhone = (value) => {
-    const digits = String(value || '').replace(/\D/g,'')
-    if(!digits) return null
-    if(digits.startsWith('27')) return { e164: `+${digits}`, wa: digits }
-    if(digits.startsWith('0')) {
-      const wa = `27${digits.slice(1)}`
-      return { e164: `+${wa}`, wa }
-    }
-    return { e164: `+${digits}`, wa: digits }
-  }
-
-  const agentName = claim?.profile?.displayName || claim?.agentEmail || null
-  const agentAgency = claim?.profile?.agency || null
-  const agentPhone = claim?.profile?.phone || null
-  const agentEmail = claim?.agentEmail || null
-
-  const priceText = formatFromZar(listing.price, displayCurrency)
-
-  const fallbackPhone = '0762956266'
-  const phone = normalizePhone(agentPhone || fallbackPhone)
-  const whatsappHref = phone ? `https://wa.me/${phone.wa}?text=${encodeURIComponent(`Hi! I'm interested in ${listing.title} (${priceText}) in ${listing.neighborhood}, ${listing.city}.`)}` : null
-  const outlookTo = agentEmail || ''
-  const outlookHref = outlookTo ? `mailto:${outlookTo}?subject=${encodeURIComponent(`Property inquiry: ${listing.title}`)}&body=${encodeURIComponent(`Hi,\n\nI'm interested in: ${listing.title}\nNeighborhood: ${listing.neighborhood}\nCity: ${listing.city}\nPrice: ${priceText}\n\nPlease contact me with more details.\n`)}` : null
-  const callHref = phone ? `tel:${phone.e164}` : null
-
-  async function handleClaim(){
-    try{
-        const res = await fetch('/api/claims/claim', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ propertyId: listing.id })
-      })
-      const data = await res.json().catch(()=> ({}))
-      if(res.status === 401){
-        router.push('/login')
-        return
-      }
-      if(res.status === 400 && Array.isArray(data?.missingFields)){
-        alert(`Please complete your Agent Profile (${data.missingFields.join(', ')}) to claim listings.`)
-        router.push('/agent/tools')
-        return
-      }
-      if(res.status === 409){
-        // refresh status
-        const s = await fetch(`/api/claims/status?propertyId=${encodeURIComponent(String(listing.id))}`).then(r=>r.json()).catch(()=> null)
-        setClaim(s?.claim || null)
-        return
-      }
-      if(!res.ok){
-        alert(data?.error || 'Unable to claim listing')
-        return
-      }
-      const s = await fetch(`/api/claims/status?propertyId=${encodeURIComponent(String(listing.id))}`).then(r=>r.json()).catch(()=> null)
-      setClaim(s?.claim || null)
-
-      // Track engagement event
-      fetch('/api/engagement/events', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          eventType: 'inquiry_sent',
-          propertyId: listing.id,
-          metadata: { title: listing.title }
-        })
-      }).catch(() => {})
-    }catch{
-      alert('Unable to claim listing')
-    }
-  }
-
-  const handleCompleteTransaction = async () => {
-    if (!claim?.agentEmail || !listing) return
-    
-    setTransactionLoading(true)
-    try {
-      const res = await fetch('/api/revenue/transactions', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          propertyId: listing.id,
-          listingPrice: listing.price,
-          agentEmail: claim.agentEmail,
-          buyerEmail: session?.user?.email || null,
-          description: `Transaction for ${listing.title}`
-        })
-      })
-
-      const data = await res.json()
-      if (!res.ok) throw new Error(data.error || 'Failed to log transaction')
-      
-      alert('Transaction recorded successfully!')
-      setShowTransaction(false)
-    } catch (e) {
-      alert(e.message || 'Failed to record transaction')
-    } finally {
-      setTransactionLoading(false)
-    }
-  }
+  const priceZar = Number(listing.price || 0)
 
   return (
     <div>
+      <Head>
+        <title>{listing.title} - BurnProjects Marketplace</title>
+      </Head>
       <Navbar />
-      <div className="container">
-        <div className="card">
-          {listing?.imageDataUrl ? (
-            <div style={{marginBottom:14}}>
-              <img src={listing.imageDataUrl} alt={listing.title || 'Listing'} style={{width:'100%',height:260,objectFit:'cover',borderRadius:10,display:'block'}} />
-            </div>
-          ) : null}
-          <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',gap:12,flexWrap:'wrap'}}>
-            <h2 style={{marginTop:0,marginBottom:0}}>{listing.title}</h2>
-            <div style={{fontWeight:800}}>{priceText}</div>
-          </div>
 
-          <div className="small" style={{marginTop:8}}>{listing.neighborhood} • {listing.city}</div>
-
-          <div style={{marginTop:10}}>
-            {loadingClaim ? (
-              <div className="small" style={{opacity:0.7}}>Loading claim…</div>
-            ) : claim ? (
-              <div className="small" style={{opacity:0.85}}>Claimed by {agentName}{agentAgency ? ` • ${agentAgency}` : ''}</div>
-            ) : (
-              <div className="small" style={{opacity:0.7}}>Unclaimed</div>
-            )}
-          </div>
-
-          <div style={{marginTop:14,color:'#374151'}}>{listing.description}</div>
-
-          {/* Agent Rating Section */}
-          {claim && agentRatings && (
-            <div style={{
-              marginTop: 20,
-              padding: 16,
-              background: 'rgba(251, 146, 60, 0.08)',
-              border: '1px solid rgba(251, 146, 60, 0.2)',
-              borderRadius: 8
-            }}>
-              <h4 style={{ marginTop: 0, marginBottom: 10 }}>Agent Rating</h4>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                <div style={{ fontSize: 28, fontWeight: 700 }}>
-                  {agentRatings.averageRating || 'New'}
-                </div>
-                <div>
-                  <div style={{ fontSize: 12, color: '#666' }}>
-                    Average rating from {agentRatings.totalReviews || 0} review{agentRatings.totalReviews !== 1 ? 's' : ''}
-                  </div>
-                  <a href="/ratings" style={{ fontSize: 12, color: '#4f46e5', textDecoration: 'none', marginTop: 4, display: 'inline-block' }}>
-                    Rate this agent →
-                  </a>
-                </div>
-              </div>
-            </div>
-          )}
-
-          <div style={{display:'flex',gap:10,marginTop:18,flexWrap:'wrap'}}>
-            <button className="btn btn-outline" onClick={()=>router.push('/market')}>Back</button>
-            {!claim ? (
-              session ? (
-                <button className="btn btn-outline" onClick={handleClaim}>Claim Listing</button>
-              ) : (
-                <a className="btn btn-outline" href="/login">Agent Login to Claim</a>
-              )
-            ) : null}
-            {claim && whatsappHref ? (
-              <a className="btn btn-primary" href={whatsappHref} target="_blank" rel="noreferrer" style={{display:'inline-flex',alignItems:'center'}}>
-                WhatsApp
-              </a>
-            ) : null}
-            {claim && outlookHref ? (
-              <a className="btn btn-outline" href={outlookHref} style={{display:'inline-flex',alignItems:'center'}}>
-                Outlook
-              </a>
-            ) : null}
-            {claim && callHref ? (
-              <a className="btn btn-outline" href={callHref} style={{display:'inline-flex',alignItems:'center'}}>
-                Call
-              </a>
-            ) : null}
-            {claim && session ? (
-              <button className="btn btn-ghost" onClick={() => setShowTransaction(!showTransaction)}>
-                {showTransaction ? 'Cancel Transaction' : 'Complete Transaction'}
-              </button>
-            ) : null}
-          </div>
-
-          {/* Transaction Modal */}
-          {showTransaction && claim && (
-            <div style={{
-              marginTop: 20,
-              padding: 16,
-              background: '#f3f4f6',
-              border: '1px solid #d1d5db',
-              borderRadius: 8
-            }}>
-              <h4 style={{ marginTop: 0 }}>Complete Transaction</h4>
-              <p style={{ fontSize: 14, color: '#666' }}>
-                Log this transaction for revenue tracking and agent commission calculation.
-              </p>
-              <div style={{
-                background: 'white',
-                padding: 12,
-                borderRadius: 6,
-                marginBottom: 12,
-                fontSize: 14
-              }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-                  <span>Property:</span>
-                  <span style={{ fontWeight: 600 }}>{listing.title}</span>
-                </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-                  <span>Agent:</span>
-                  <span style={{ fontWeight: 600 }}>{agentName}</span>
-                </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', borderTop: '1px solid #e5e7eb', paddingTop: 8 }}>
-                  <span>Transaction Value:</span>
-                  <span style={{ fontWeight: 700, fontSize: 16 }}>{priceText}</span>
-                </div>
-              </div>
-              <button 
-                className="btn btn-primary" 
-                onClick={handleCompleteTransaction}
-                disabled={transactionLoading}
-                style={{ width: '100%' }}
-              >
-                {transactionLoading ? 'Recording…' : 'Confirm & Record Transaction'}
-              </button>
-            </div>
-          )}
+      <main className="container" style={{marginTop:32}}>
+        <div style={{marginBottom:24}}>
+          <Link href="/market">
+            <button className="btn btn-ghost">← Back to Market</button>
+          </Link>
         </div>
-      </div>
+
+        <div className="card">
+          {listing.imageDataUrl && (
+            <div style={{marginBottom:24}}>
+              <img 
+                src={listing.imageDataUrl} 
+                alt={listing.title} 
+                style={{width:'100%',maxHeight:400,objectFit:'cover',borderRadius:8}}
+              />
+            </div>
+          )}
+
+          <h1 className="landing-h2" style={{marginTop:0}}>{listing.title}</h1>
+
+          <div style={{marginTop:16,marginBottom:24}}>
+            <div style={{fontSize:28,fontWeight:700,color:'var(--primary)'}}>
+              R {priceZar.toLocaleString()}
+            </div>
+          </div>
+
+          <div style={{marginBottom:24}}>
+            <h3>Location</h3>
+            <p className="landing-muted">
+              {listing.neighborhood}, {listing.city || 'Cape Town'}
+            </p>
+          </div>
+
+          <div style={{marginBottom:24}}>
+            <h3>Description</h3>
+            <p className="landing-muted" style={{lineHeight:1.6}}>
+              {listing.description}
+            </p>
+          </div>
+
+          {listing.bedrooms && (
+            <div style={{marginBottom:24}}>
+              <h3>Details</h3>
+              <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit, minmax(150px, 1fr))',gap:16}}>
+                {listing.bedrooms && (
+                  <div>
+                    <div className="landing-muted" style={{fontSize:14}}>Bedrooms</div>
+                    <div style={{fontSize:18,fontWeight:600}}>{listing.bedrooms}</div>
+                  </div>
+                )}
+                {listing.bathrooms && (
+                  <div>
+                    <div className="landing-muted" style={{fontSize:14}}>Bathrooms</div>
+                    <div style={{fontSize:18,fontWeight:600}}>{listing.bathrooms}</div>
+                  </div>
+                )}
+                {listing.sqft && (
+                  <div>
+                    <div className="landing-muted" style={{fontSize:14}}>Square Feet</div>
+                    <div style={{fontSize:18,fontWeight:600}}>{listing.sqft.toLocaleString()}</div>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+
+          <div style={{marginTop:32,paddingTop:24,borderTop:'1px solid var(--border)'}}>
+            <Link href="/market">
+              <button className="btn btn-primary">Browse More Listings</button>
+            </Link>
+          </div>
+        </div>
+
+        <footer className="landing-footer" aria-label="Footer" style={{marginTop:64}}>
+          <div className="landing-footer-inner">
+            <div className="landing-footer-left">
+              <div className="brand-mark">BurnProjects</div>
+              <div className="landing-muted">© BurnProjects. All rights reserved</div>
+            </div>
+            <div className="landing-footer-links">
+              <Link href="/">Home</Link>
+              <Link href="/about">About Us</Link>
+              <Link href="/market">Market</Link>
+            </div>
+          </div>
+        </footer>
+      </main>
     </div>
   )
 }
