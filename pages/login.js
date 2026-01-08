@@ -1,146 +1,32 @@
 import { getProviders, signIn } from 'next-auth/react'
-import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Navbar from '../components/Navbar'
 import AuthButtons from '../components/AuthButtons'
 
 export default function Login({ providers }){
-  const [mode, setMode] = useState('login')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState(null)
-  const sanitizeEmail = (value) => (value || '').trim().toLowerCase()
-
-  const doCredentialsLogin = async ({ email: rawEmail, password: rawPassword, source }) => {
-    setError(null)
-    const normalizedEmail = sanitizeEmail(rawEmail)
-    const safePassword = (rawPassword || '').trim()
-    if(!normalizedEmail || !safePassword){
-      setError('Email and password are required')
-      return
-    }
-    setLoading(true)
-    try{
-      const res = await signIn('credentials', { redirect: false, email: normalizedEmail, password: safePassword })
-      if(res?.error){
-        setError(res.error === 'CredentialsSignin' ? 'Invalid email or password' : res.error)
-        return
-      }
-      try{
-        const payload = {
-          loggedIn: true,
-          email: normalizedEmail,
-          userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : null,
-          platform: typeof navigator !== 'undefined' ? navigator.platform : null,
-          screen: typeof screen !== 'undefined' ? {width: screen.width, height: screen.height} : null,
-          innerSize: typeof window !== 'undefined' ? {w: window.innerWidth, h: window.innerHeight} : null,
-          language: typeof navigator !== 'undefined' ? navigator.language : null,
-          timestamp: new Date().toISOString(),
-          source: source || 'client'
-        }
-        await fetch('/api/tracking/login', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(payload) }).catch(()=>null)
-      }catch(e){/* ignore */}
-      window.location.href = '/market'
-    }finally{
-      setLoading(false)
-    }
-  }
-
   return (
-    <div>
+    <div style={{minHeight:'100vh',background:'radial-gradient(circle at 20% 20%, rgba(160,32,240,0.2), transparent 30%), radial-gradient(circle at 80% 0%, rgba(0,200,255,0.12), transparent 32%), #0b1220'}}>
       <Navbar />
-      <div className="container center">
-        <div style={{maxWidth:420,width:'100%'}}>
-          <div className="card">
-            <div className="logo" style={{width:96,height:96,margin:'0 auto'}}>logo</div>
-            <div style={{display:'flex',justifyContent:'center',gap:12,marginTop:24,marginBottom:24}}>
-              <button
-                onClick={()=>setMode('login')}
-                aria-pressed={mode==='login'}
-                className="btn"
-                style={{
-                  padding:'8px 14px',
-                  borderRadius:8,
-                  border: mode === 'login' ? '2px solid #A020F0' : '1px solid #e6e9ef',
-                  background: mode === 'login' ? 'rgba(160,32,240,0.08)' : 'transparent',
-                  fontWeight:600,
-                  color: mode === 'login' ? '#A020F0' : '#111'
-                }}
-              >
-                Login
-              </button>
-              <button
-                onClick={()=>setMode('register')}
-                aria-pressed={mode==='register'}
-                className="btn"
-                style={{
-                  padding:'8px 14px',
-                  borderRadius:8,
-                  border: mode === 'register' ? '2px solid #A020F0' : '1px solid #e6e9ef',
-                  background: mode === 'register' ? 'rgba(160,32,240,0.08)' : 'transparent',
-                  fontWeight:600,
-                  color: mode === 'register' ? '#A020F0' : '#111'
-                }}
-              >
-                Sign Up
-              </button>
-            </div>
-
-            <h2 style={{textAlign:'center',color:'#A020F0'}}>{mode === 'login' ? 'Welcome Back' : 'Create Account'}</h2>
-
-            <div style={{marginTop:8}}>
-              <input id="email" className="input" placeholder="Email Address" value={email} onChange={e=>setEmail(e.target.value)} autoComplete="off" autoCorrect="off" autoCapitalize="none" spellCheck={false} />
-              <input id="password" type="password" className="input" placeholder="Password" value={password} onChange={e=>setPassword(e.target.value)} autoComplete="off" autoCorrect="off" autoCapitalize="none" spellCheck={false} />
-              <div style={{display:'flex',justifyContent:'space-between',marginTop:12}}>
-                <button className="btn btn-outline" onClick={async ()=>{
-                  try{
-                    if(mode === 'login'){
-                      await doCredentialsLogin({ email, password, source: 'login-form' })
-                    }else{
-                      // register then sign in
-                      const normalizedEmail = sanitizeEmail(email)
-                      const safePassword = (password || '').trim()
-                      if(!normalizedEmail || !safePassword){
-                        setError('Email and password are required')
-                        return
-                      }
-                      setLoading(true)
-                      const res = await fetch('/api/local/register', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({email: normalizedEmail, password: safePassword}) })
-                      const data = await res.json().catch(()=>({error:'Failed'}))
-                      if(!res.ok) { setError(data.error || 'Registration failed'); setLoading(false); return }
-                      await doCredentialsLogin({ email: normalizedEmail, password: safePassword, source: 'register' })
-                    }
-                  }catch(e){
-                    setError(e.message || 'Unknown error')
-                  }finally{ setLoading(false) }
-                }}>{loading ? (mode==='login' ? 'Logging in...' : 'Registering...') : (mode === 'login' ? 'Login' : 'Register')}</button>
-                <Link href="/"><button className="btn btn-ghost">Back</button></Link>
+      <div className="container" style={{display:'flex',justifyContent:'center',alignItems:'center',padding:'64px 16px'}}>
+        <div style={{maxWidth:440,width:'100%'}}>
+          <div style={{background:'rgba(12,18,32,0.9)',border:'1px solid #1f2a44',borderRadius:16,padding:24,boxShadow:'0 20px 50px rgba(0,0,0,0.45)'}}>
+            <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',gap:12}}>
+              <div>
+                <div style={{fontSize:13,color:'#94a3b8',textTransform:'uppercase',letterSpacing:'0.08em'}}>Marketplace Access</div>
+                <h2 style={{margin:'6px 0 4px',color:'#A020F0'}}>Sign in or create an account</h2>
+                <p style={{margin:0,color:'#cbd5e1',fontSize:14}}>Shop local picks, see sourcing details, and track your orders.</p>
               </div>
-              {error && <div style={{marginTop:10,color:'#b91c1c'}} className="small">{error}</div>}
+              <div style={{width:48,height:48,borderRadius:12,background:'linear-gradient(135deg,#A020F0,#4f46e5)',display:'grid',placeItems:'center',color:'#fff',fontWeight:800,fontSize:18}}>M</div>
             </div>
 
-            <div className="card" style={{marginTop:16}}>
-              <div style={{fontWeight:800,marginBottom:10}}>Group Login (testing)</div>
-              <div className="small" style={{marginBottom:12}}>Quick sign-in buttons for the built-in test accounts.</div>
-              <div style={{display:'flex',gap:10,flexWrap:'wrap'}}>
-                <button className="btn btn-outline" disabled={loading} onClick={async ()=>{
-                  setEmail('admin@local.test')
-                  setPassword('Admin123!')
-                  await doCredentialsLogin({ email: 'admin@local.test', password: 'Admin123!', source: 'group-admin' })
-                }}>Login as Admin</button>
-                <button className="btn btn-outline" disabled={loading} onClick={async ()=>{
-                  setEmail('user1@local.test')
-                  setPassword('User1123!')
-                  await doCredentialsLogin({ email: 'user1@local.test', password: 'User1123!', source: 'group-user1' })
-                }}>Login as User1</button>
-              </div>
-            </div>
-
-            <div style={{textAlign:'center',marginTop:12}} className="small">OR</div>
-
-            <div style={{marginTop:12}}>
+            <div style={{marginTop:20}}>
               <AuthButtons providers={providers} />
+            </div>
+
+            <div style={{display:'grid',gap:10,marginTop:16}}>
+              <Link href="/credentials"><button className="btn btn-primary" style={{width:'100%'}}>Continue with email</button></Link>
+              <Link href="/register"><button className="btn btn-outline" style={{width:'100%'}}>Create a new account</button></Link>
+              <Link href="/" style={{textAlign:'center'}}><button className="btn btn-ghost" style={{width:'100%'}}>Back to home</button></Link>
             </div>
           </div>
         </div>
@@ -149,7 +35,7 @@ export default function Login({ providers }){
   )
 }
 
-export async function getServerSideProps(context){
+export async function getServerSideProps(){
   const providers = await getProviders()
-  return {props:{providers}}
+  return { props: { providers } }
 }

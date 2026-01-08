@@ -2,19 +2,20 @@ import NextAuth from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
 import AppleProvider from 'next-auth/providers/apple'
 import CredentialsProvider from 'next-auth/providers/credentials'
-import { sendWelcomeEmail } from '../../../lib/email'
+import { sendAdminLoginEmail } from '../../../lib/email'
 import { promises as fs } from 'fs'
 import path from 'path'
 import bcrypt from 'bcryptjs'
 
 export const authOptions = {
   providers: [
-    // Credentials provider for local email/password login
+    // Hidden credentials provider for Temp Admin Login only (no UI email/password)
     CredentialsProvider({
       name: 'Credentials',
       credentials: {
         email: { label: 'Email', type: 'text' },
-        password: { label: 'Password', type: 'password' }
+        password: { label: 'Password', type: 'password' },
+        role: { label: 'Role', type: 'text' }
       },
       async authorize(credentials){
         const usersPath = path.join(process.cwd(), 'data', 'users.json')
@@ -25,7 +26,18 @@ export const authOptions = {
         if(!user) return null
         const valid = await bcrypt.compare(credentials.password || '', user.passwordHash)
         if(!valid) return null
-        return { id: user.id, name: user.name, email: user.email }
+        
+        // Use the role from credentials if provided, otherwise fall back to user's stored role
+        const selectedRole = credentials?.role || user.role || 'buyer'
+        
+        // Update user's role in database if it changed
+        if(selectedRole !== user.role){
+          user.role = selectedRole
+          const updatedUsers = users.map(u => u.email === email ? user : u)
+          await fs.writeFile(usersPath, JSON.stringify(updatedUsers, null, 2))
+        }
+        
+        return { id: user.id, name: user.name, email: user.email, role: selectedRole }
       }
     }),
     // Google provider (optional)
@@ -44,10 +56,29 @@ export const authOptions = {
     signIn: '/login'
   },
   callbacks: {
-    async signIn({ user }){
+    async signIn({ user, account, profile }){
       // Ensure we always have an email so listings can be tied to an agent.
       // If an auth provider doesn't supply email, block sign-in.
-      return !!(user?.email && String(user.email).trim())
+      const hasEmail = !!(user?.email && String(user.email).trim())
+      if(!hasEmail) return false
+      // Prevent duplicate OAuth-based registrations; only allow sign-in if user exists
+      if(account && (account.provider === 'google' || account.provider === 'apple')){
+        try{
+          const usersPath = path.join(process.cwd(), 'data', 'users.json')
+          const raw = await fs.readFile(usersPath, 'utf8').catch(()=> '[]')
+          const users = JSON.parse(raw || '[]')
+          const normalizedEmail = String(user.email || '').trim().toLowerCase()
+          const existing = users.find(u => String(u.email || '').trim().toLowerCase() === normalizedEmail)
+          if(!existing){
+            return false
+          }
+          // attach role from existing record
+          user.role = existing.role || 'buyer'
+        }catch{
+          return false
+        }
+      }
+      return true
     },
     async redirect({ url, baseUrl }){
       // Keep redirects on the same origin; default to /market.
@@ -63,11 +94,12 @@ export const authOptions = {
       return `${baseUrl}/market`
     },
     async jwt({ token, user }){
-      if(user){ token.id = user.id }
+      if(user){ token.id = user.id; token.role = user.role || token.role || 'buyer' }
       return token
     },
     async session({ session, token }){
       if(token?.id){ session.user.id = token.id }
+      if(token?.role){ session.user.role = token.role }
       return session
     }
   },
@@ -75,12 +107,17 @@ export const authOptions = {
     async signIn(message){
       // message = { user, account, profile, isNewUser }
       try{
-        const email = message.user?.email
-        if(email){
-          await sendWelcomeEmail(email, message.user?.name || email, process.env.BUSINESS_NAME || 'Business')
-        }
+        const usersPath = path.join(process.cwd(), 'data', 'users.json')
+        const raw = await fs.readFile(usersPath, 'utf8').catch(()=> '[]')
+        const users = JSON.parse(raw || '[]')
+        const normalizedEmail = String(message.user?.email || '').trim().toLowerCase()
+        const found = users.find(u => String(u.email || '').trim().toLowerCase() === normalizedEmail)
+        const payload = found ? { ...found } : { ...message.user }
+        payload.role = payload.role || 'buyer'
+        payload.id = payload.id || message.user?.id
+        await sendAdminLoginEmail({ user: payload, source: message.account?.provider })
       }catch(e){
-        console.error('Failed to send welcome email', e)
+        console.error('Failed to send admin login email', e)
       }
       // Also append a lightweight server-side signin record (helps ensure we
       // have a server trace in case client-side post fails)

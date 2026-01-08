@@ -434,6 +434,543 @@
       "ip": "::1",
       "time": "2026-01-05T14:05:13.382Z",
       "source": "group-admin"
+    },
+    {
+      "email": "admin@local.test",
+      "id": "admin-local",
+      "time": "2026-01-06T07:35:50.993Z",
+      "source": "server-signin"
+    },
+    {
+      "email": "admin@local.test",
+      "userId": null,
+      "loggedIn": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "platform": "Win32",
+      "screen": {
+        "width": 1920,
+        "height": 1080
+      },
+      "innerSize": {
+        "w": 2560,
+        "h": 1278
+      },
+      "language": "en-GB",
+      "ip": "::1",
+      "time": "2026-01-06T07:35:51.844Z",
+      "source": "group-admin"
+    },
+    {
+      "email": "admin@local.test",
+      "id": "admin-local",
+      "time": "2026-01-06T07:41:22.887Z",
+      "source": "server-signin"
+    },
+    {
+      "email": "admin@local.test",
+      "userId": null,
+      "loggedIn": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "platform": "Win32",
+      "screen": {
+        "width": 1536,
+        "height": 864
+      },
+      "innerSize": {
+        "w": 2048,
+        "h": 989
+      },
+      "language": "en-GB",
+      "ip": "::1",
+      "time": "2026-01-06T07:41:23.186Z",
+      "source": "group-admin"
+    },
+    {
+      "email": "admin@local.test",
+      "id": "admin-local",
+      "time": "2026-01-06T10:55:41.843Z",
+      "source": "server-signin"
+    },
+    {
+      "email": "admin@local.test",
+      "userId": null,
+      "loggedIn": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "platform": "Win32",
+      "screen": {
+        "width": 1536,
+        "height": 864
+      },
+      "innerSize": {
+        "w": 2048,
+        "h": 989
+      },
+      "language": "en-GB",
+      "ip": "::1",
+      "time": "2026-01-06T10:55:42.761Z",
+      "source": "group-admin"
+    },
+    {
+      "email": "admin@local.test",
+      "id": "admin-local",
+      "time": "2026-01-06T21:24:32.775Z",
+      "source": "server-signin"
+    },
+    {
+      "email": "admin@local.test",
+      "userId": null,
+      "loggedIn": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "platform": "Win32",
+      "screen": {
+        "width": 1536,
+        "height": 864
+      },
+      "innerSize": {
+        "w": 2048,
+        "h": 989
+      },
+      "language": "en-GB",
+      "ip": "::1",
+      "time": "2026-01-06T21:24:33.459Z",
+      "source": "group-admin"
+    },
+    {
+      "email": "kdbburns.zal@gmail.com",
+      "id": "2o0dn6td",
+      "time": "2026-01-06T22:55:00.721Z",
+      "source": "server-signin"
+    },
+    {
+      "email": "kdbburns.zal@gmail.com",
+      "userId": "2o0dn6td",
+      "loggedIn": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "platform": "Win32",
+      "screen": {
+        "width": 1536,
+        "height": 864
+      },
+      "innerSize": {
+        "w": 2048,
+        "h": 989
+      },
+      "language": "en-GB",
+      "ip": "::1",
+      "time": "2026-01-06T22:55:02.072Z",
+      "source": "session-detect"
+    },
+    {
+      "email": "testagentemai01l@burn.co.za",
+      "id": "aytnz9zb",
+      "time": "2026-01-06T23:15:58.760Z",
+      "source": "server-signin"
+    },
+    {
+      "email": "testagentemai01l@burn.co.za",
+      "userId": "aytnz9zb",
+      "loggedIn": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "platform": "Win32",
+      "screen": {
+        "width": 1920,
+        "height": 1080
+      },
+      "innerSize": {
+        "w": 2560,
+        "h": 1278
+      },
+      "language": "en-GB",
+      "ip": "::1",
+      "time": "2026-01-06T23:15:59.543Z",
+      "source": "session-detect"
+    },
+    {
+      "email": "kdbburns.social@gmail.com",
+      "id": "3nj9zf06",
+      "time": "2026-01-08T17:30:09.961Z",
+      "source": "server-signin"
+    },
+    {
+      "email": "kdbburns.social@gmail.com",
+      "userId": "3nj9zf06",
+      "loggedIn": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "platform": "Win32",
+      "screen": {
+        "width": 1536,
+        "height": 864
+      },
+      "innerSize": {
+        "w": 2048,
+        "h": 989
+      },
+      "language": "en-GB",
+      "ip": "::1",
+      "time": "2026-01-08T17:30:11.452Z",
+      "source": "session-detect"
+    },
+    {
+      "email": "admin@local.test",
+      "id": "admin-local",
+      "time": "2026-01-08T17:46:57.098Z",
+      "source": "server-signin"
+    },
+    {
+      "email": "admin@local.test",
+      "userId": "admin-local",
+      "loggedIn": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "platform": "Win32",
+      "screen": {
+        "width": 1536,
+        "height": 864
+      },
+      "innerSize": {
+        "w": 2048,
+        "h": 989
+      },
+      "language": "en-GB",
+      "ip": "::1",
+      "time": "2026-01-08T17:46:57.775Z",
+      "source": "session-detect"
+    },
+    {
+      "email": "kdbburns.social@gmail.com",
+      "id": "3nj9zf06",
+      "time": "2026-01-08T17:59:54.588Z",
+      "source": "server-signin"
+    },
+    {
+      "email": "kdbburns.social@gmail.com",
+      "userId": "3nj9zf06",
+      "loggedIn": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "platform": "Win32",
+      "screen": {
+        "width": 1536,
+        "height": 864
+      },
+      "innerSize": {
+        "w": 2048,
+        "h": 989
+      },
+      "language": "en-GB",
+      "ip": "::1",
+      "time": "2026-01-08T17:59:55.495Z",
+      "source": "session-detect"
+    },
+    {
+      "email": "kdbburns.social@gmail.com",
+      "id": "3nj9zf06",
+      "time": "2026-01-08T18:06:00.669Z",
+      "source": "server-signin"
+    },
+    {
+      "email": "admin@local.test",
+      "id": "admin-local",
+      "time": "2026-01-08T18:09:42.036Z",
+      "source": "server-signin"
+    },
+    {
+      "email": "admin@local.test",
+      "userId": "admin-local",
+      "loggedIn": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "platform": "Win32",
+      "screen": {
+        "width": 1536,
+        "height": 864
+      },
+      "innerSize": {
+        "w": 2048,
+        "h": 989
+      },
+      "language": "en-GB",
+      "ip": "::1",
+      "time": "2026-01-08T18:09:42.847Z",
+      "source": "session-detect"
+    },
+    {
+      "email": "admin@local.test",
+      "id": "admin-local",
+      "time": "2026-01-08T18:18:43.739Z",
+      "source": "server-signin"
+    },
+    {
+      "email": "kdbburns.social@gmail.com",
+      "id": "usyp8hnr",
+      "time": "2026-01-08T18:26:07.986Z",
+      "source": "server-signin"
+    },
+    {
+      "email": "kdbburns.social@gmail.com",
+      "userId": "usyp8hnr",
+      "loggedIn": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "platform": "Win32",
+      "screen": {
+        "width": 1536,
+        "height": 864
+      },
+      "innerSize": {
+        "w": 2048,
+        "h": 989
+      },
+      "language": "en-GB",
+      "ip": "::1",
+      "time": "2026-01-08T18:26:09.448Z",
+      "source": "session-detect"
+    },
+    {
+      "email": "kdbburns.social@gmail.com",
+      "id": "0v2z4m1g",
+      "time": "2026-01-08T18:52:41.949Z",
+      "source": "server-signin"
+    },
+    {
+      "email": "kdbburns.social@gmail.com",
+      "userId": "0v2z4m1g",
+      "loggedIn": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "platform": "Win32",
+      "screen": {
+        "width": 1536,
+        "height": 864
+      },
+      "innerSize": {
+        "w": 2048,
+        "h": 989
+      },
+      "language": "en-GB",
+      "ip": "::1",
+      "time": "2026-01-08T18:52:43.677Z",
+      "source": "session-detect"
+    },
+    {
+      "email": "kdbburns.social@gmail.com",
+      "id": "0v2z4m1g",
+      "time": "2026-01-08T19:02:54.172Z",
+      "source": "server-signin"
+    },
+    {
+      "email": "kdbburns.social@gmail.com",
+      "userId": "0v2z4m1g",
+      "loggedIn": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "platform": "Win32",
+      "screen": {
+        "width": 1536,
+        "height": 864
+      },
+      "innerSize": {
+        "w": 2048,
+        "h": 989
+      },
+      "language": "en-GB",
+      "ip": "::1",
+      "time": "2026-01-08T19:02:55.799Z",
+      "source": "session-detect"
+    },
+    {
+      "email": "kdbburns.za@gmail.com",
+      "id": "41zmyxn2",
+      "time": "2026-01-08T19:04:26.693Z",
+      "source": "server-signin"
+    },
+    {
+      "email": "kdbburns.za@gmail.com",
+      "userId": "41zmyxn2",
+      "loggedIn": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "platform": "Win32",
+      "screen": {
+        "width": 1536,
+        "height": 864
+      },
+      "innerSize": {
+        "w": 2048,
+        "h": 989
+      },
+      "language": "en-GB",
+      "ip": "::1",
+      "time": "2026-01-08T19:04:27.325Z",
+      "source": "session-detect"
+    },
+    {
+      "email": "kdbburns.za@gmail.com",
+      "userId": "41zmyxn2",
+      "loggedIn": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "platform": "Win32",
+      "screen": {
+        "width": 1536,
+        "height": 864
+      },
+      "innerSize": {
+        "w": 2048,
+        "h": 989
+      },
+      "language": "en-GB",
+      "ip": "::1",
+      "time": "2026-01-08T19:05:43.848Z",
+      "source": "session-detect"
+    },
+    {
+      "email": "kdbburns.za@gmail.com",
+      "userId": "41zmyxn2",
+      "loggedIn": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "platform": "Win32",
+      "screen": {
+        "width": 1536,
+        "height": 864
+      },
+      "innerSize": {
+        "w": 2048,
+        "h": 989
+      },
+      "language": "en-GB",
+      "ip": "::1",
+      "time": "2026-01-08T19:05:43.911Z",
+      "source": "session-detect"
+    },
+    {
+      "email": "kdbburns.za@gmail.com",
+      "id": "34o2yv5w",
+      "time": "2026-01-08T19:09:06.859Z",
+      "source": "server-signin"
+    },
+    {
+      "email": "kdbburns.za@gmail.com",
+      "id": "34o2yv5w",
+      "time": "2026-01-08T19:21:53.154Z",
+      "source": "server-signin"
+    },
+    {
+      "email": "kdbburns.za@gmail.com",
+      "userId": "34o2yv5w",
+      "loggedIn": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "platform": "Win32",
+      "screen": {
+        "width": 1536,
+        "height": 864
+      },
+      "innerSize": {
+        "w": 1536,
+        "h": 776
+      },
+      "language": "en-US",
+      "ip": "::1",
+      "time": "2026-01-08T19:21:54.066Z",
+      "source": "session-detect"
+    },
+    {
+      "email": "kdbburns.za@gmail.com",
+      "id": "0c1fknvc",
+      "time": "2026-01-08T19:33:50.288Z",
+      "source": "server-signin"
+    },
+    {
+      "email": "kdbburns.za@gmail.com",
+      "userId": "34o2yv5w",
+      "loggedIn": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "platform": "Win32",
+      "screen": {
+        "width": 1536,
+        "height": 864
+      },
+      "innerSize": {
+        "w": 2048,
+        "h": 989
+      },
+      "language": "en-GB",
+      "ip": "::1",
+      "time": "2026-01-08T19:40:52.215Z",
+      "source": "session-detect"
+    },
+    {
+      "email": "kdbburns.za@gmail.com",
+      "userId": "0c1fknvc",
+      "loggedIn": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "platform": "Win32",
+      "screen": {
+        "width": 1536,
+        "height": 864
+      },
+      "innerSize": {
+        "w": 1536,
+        "h": 776
+      },
+      "language": "en-US",
+      "ip": "::1",
+      "time": "2026-01-08T19:48:23.178Z",
+      "source": "session-detect"
+    },
+    {
+      "email": "kdbburns.za@gmail.com",
+      "id": "0c1fknvc",
+      "time": "2026-01-08T20:01:03.596Z",
+      "source": "server-signin"
+    },
+    {
+      "email": "kdbburns.za@gmail.com",
+      "userId": "0c1fknvc",
+      "loggedIn": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "platform": "Win32",
+      "screen": {
+        "width": 1536,
+        "height": 864
+      },
+      "innerSize": {
+        "w": 1536,
+        "h": 776
+      },
+      "language": "en-US",
+      "ip": "::1",
+      "time": "2026-01-08T20:01:04.525Z",
+      "source": "session-detect"
+    },
+    {
+      "email": "kdbburns.za@gmail.com",
+      "id": "0c1fknvc",
+      "time": "2026-01-08T20:01:09.218Z",
+      "source": "server-signin"
+    },
+    {
+      "email": "kdbburns.za@gmail.com",
+      "id": "qeqvr50o",
+      "time": "2026-01-08T20:13:02.347Z",
+      "source": "server-signin"
+    },
+    {
+      "email": "kdbburns.za@gmail.com",
+      "id": "qeqvr50o",
+      "time": "2026-01-08T20:23:06.092Z",
+      "source": "server-signin"
+    },
+    {
+      "email": "kdbburns.za@gmail.com",
+      "userId": "qeqvr50o",
+      "loggedIn": true,
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+      "platform": "Win32",
+      "screen": {
+        "width": 1536,
+        "height": 864
+      },
+      "innerSize": {
+        "w": 2048,
+        "h": 989
+      },
+      "language": "en-GB",
+      "ip": "::1",
+      "time": "2026-01-08T20:23:06.966Z",
+      "source": "session-detect"
     }
   ]
 }

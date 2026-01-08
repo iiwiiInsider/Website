@@ -1,0 +1,29 @@
+[
+  {
+    "id": "k4rxojrl",
+    "email": "kdbburns.za@gmail.com",
+    "timestamp": "2026-01-08T20:01:03.651Z",
+    "role": "buyer",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "verificationImage": null,
+    "icStorageStatus": "not-collected"
+  },
+  {
+    "id": "sim59w3h",
+    "email": "kdbburns.za@gmail.com",
+    "timestamp": "2026-01-08T20:01:09.279Z",
+    "role": "buyer",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "verificationImage": null,
+    "icStorageStatus": "not-collected"
+  },
+  {
+    "id": "wod0gt3f",
+    "email": "kdbburns.za@gmail.com",
+    "timestamp": "2026-01-08T20:23:06.166Z",
+    "role": "buyer",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "verificationImage": null,
+    "icStorageStatus": "not-collected"
+  }
+]

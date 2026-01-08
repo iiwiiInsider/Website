@@ -2,15 +2,14 @@ import { useEffect, useState } from 'react'
 import properties from '../data/properties'
 import { useSession, signIn } from 'next-auth/react'
 import Navbar from '../components/Navbar'
-import PropertyCard from '../components/PropertyCard'
 import { CURRENCIES, formatFromZar, normalizeCurrencyCode, convertToZar, currencyForTimeZone } from '../lib/currency'
 import { ALLOWED_NEIGHBORHOODS, normalizeNeighborhood } from '../lib/neighborhoods'
 
 export default function Market(){
   const { data: session, status } = useSession()
+  const [preferredTool, setPreferredTool] = useState('')
   const [search, setSearch] = useState('')
-  const [listingType, setListingType] = useState('')
-  const [neighborhood, setNeighborhood] = useState('')
+  const [listingType, setListingType] = useState('sell')
   const [minPrice, setMinPrice] = useState('')
   const [maxPrice, setMaxPrice] = useState('')
   const [filtered, setFiltered] = useState([])
@@ -47,6 +46,18 @@ export default function Market(){
   ]
 
   const combinedListings = [...properties, ...userListings]
+  useEffect(() => {
+    const sessionRole = String(session?.user?.role || '').toLowerCase()
+    if(sessionRole){
+      setPreferredTool(sessionRole)
+      return
+    }
+    try{
+      const saved = localStorage.getItem('preferredTool')
+      setPreferredTool(saved || '')
+    }catch{}
+  }, [session?.user?.role])
+
 
   const loadUserListings = async () => {
     setLoadingListings(true)
@@ -146,11 +157,10 @@ export default function Market(){
     let out = combinedListings
     if(listingType) out = out.filter(p => (p.listingType || '').toLowerCase() === listingType)
     if(search) out = out.filter(p => p.title.toLowerCase().includes(search.toLowerCase()))
-    if(neighborhood) out = out.filter(p => p.neighborhood === neighborhood)
     if(minPrice) out = out.filter(p => p.price >= convertToZar(Number(minPrice), displayCurrency))
     if(maxPrice) out = out.filter(p => p.price <= convertToZar(Number(maxPrice), displayCurrency))
     setFiltered(out)
-  },[listingType,search,neighborhood,minPrice,maxPrice,userListings,displayCurrency])
+  },[listingType,search,minPrice,maxPrice,userListings,displayCurrency])
 
   const refreshClaims = async (ids) => {
     try{
@@ -258,7 +268,7 @@ export default function Market(){
     )
   }
 
-  const neighborhoods = ALLOWED_NEIGHBORHOODS
+  
 
   return (
     <div>
@@ -284,21 +294,6 @@ export default function Market(){
                 <div className="small" style={{opacity:0.7}}>Default is South Africa</div>
               </div>
             </div>
-
-            <div className="market-type">
-              <button
-                className={listingType === '' ? 'btn btn-primary' : 'btn btn-outline'}
-                onClick={()=>setListingType('')}
-              >All</button>
-              <button
-                className={listingType === 'buy' ? 'btn btn-primary' : 'btn btn-outline'}
-                onClick={()=>setListingType('buy')}
-              >Buy</button>
-              <button
-                className={listingType === 'sell' ? 'btn btn-primary' : 'btn btn-outline'}
-                onClick={()=>setListingType('sell')}
-              >Sell</button>
-            </div>
           </div>
         </div>
 
@@ -306,10 +301,6 @@ export default function Market(){
           <div style={{marginBottom:12}}>
             <input className="input" placeholder="Search any available market" value={search} onChange={e=>setSearch(e.target.value)} autoComplete="off" autoCorrect="off" autoCapitalize="none" spellCheck={false} />
             <div className="filter-row" style={{marginTop:10}}>
-              <select className="input filter" value={neighborhood} onChange={e=>setNeighborhood(e.target.value)}>
-                <option value="">All Neighborhoods</option>
-                {neighborhoods.map(n=> <option key={n} value={n}>{n}</option>)}
-              </select>
               <input className="input filter" placeholder={`Min (${displayCurrency})`} value={minPrice} onChange={e=>setMinPrice(e.target.value)} autoComplete="off" autoCorrect="off" autoCapitalize="none" spellCheck={false} />
               <input className="input filter" placeholder={`Max (${displayCurrency})`} value={maxPrice} onChange={e=>setMaxPrice(e.target.value)} autoComplete="off" autoCorrect="off" autoCapitalize="none" spellCheck={false} />
             </div>
@@ -412,26 +403,7 @@ export default function Market(){
             </div>
           ) : null}
 
-          <div className="property-grid">
-            {filtered.map(p => {
-              const email = String(session?.user?.email || '').trim().toLowerCase()
-              const owner = String(p?.ownerEmail || '').trim().toLowerCase()
-              const canEdit = owner && (owner === email || email === 'admin@local.test')
-              return (
-                <PropertyCard
-                  key={p.id}
-                  p={p}
-                  claim={claims[String(p.id)]}
-                  canClaim={!!session}
-                  onClaimed={()=>refreshClaims([p.id])}
-                  formatPrice={formatPrice}
-                  onEdit={canEdit ? ()=>startEdit(p) : undefined}
-                  onDelete={canEdit ? ()=>deleteListing(p.id) : undefined}
-                />
-              )
-            })}
-          </div>
-          {filtered.length === 0 && <div className="small" style={{marginTop:12}}>No listings found</div>}
+          {/* Listings removed per request */}
         </div>
       </div>
     </div>

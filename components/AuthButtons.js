@@ -21,9 +21,11 @@ function AppleIcon(){
 
 export default function AuthButtons({ providers }){
   if(!providers) return null
+  const visibleProviders = Object.values(providers).filter(p => p.id !== 'credentials')
+  if(visibleProviders.length === 0) return null
   return (
     <div style={{display:'flex',flexDirection:'column',gap:10}}>
-      {Object.values(providers).map(p => (
+      {visibleProviders.map(p => (
         <button key={p.name} className="btn btn-provider" onClick={()=>{
           // Per request: show OAuth option but route to an error page (simulates unavailable external providers)
           if(p.name === 'Google' || p.name === 'Apple'){

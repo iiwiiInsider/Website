@@ -1,0 +1,39 @@
+{
+  "kdbburns.za@gmail.com": {
+    "email": "kdbburns.za@gmail.com",
+    "events": [
+      {
+        "id": "evt_mk5w7jct6yo8",
+        "type": "property_viewed",
+        "propertyId": 4,
+        "metadata": {
+          "title": "Cozy Studio in Observatory",
+          "neighborhood": "Observatory"
+        },
+        "timestamp": "2026-01-08T20:21:27.101Z"
+      },
+      {
+        "id": "evt_mk5w9p4l7ui3",
+        "type": "property_viewed",
+        "propertyId": 4,
+        "metadata": {
+          "title": "Cozy Studio in Observatory",
+          "neighborhood": "Observatory"
+        },
+        "timestamp": "2026-01-08T20:23:07.893Z"
+      },
+      {
+        "id": "evt_mk5w9p6xtxdq",
+        "type": "property_viewed",
+        "propertyId": 4,
+        "metadata": {
+          "title": "Cozy Studio in Observatory",
+          "neighborhood": "Observatory"
+        },
+        "timestamp": "2026-01-08T20:23:07.977Z"
+      }
+    ],
+    "createdAt": "2026-01-08T20:21:27.101Z",
+    "lastActivity": "2026-01-08T20:23:07.977Z"
+  }
+}

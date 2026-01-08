@@ -1,0 +1,794 @@
+[
+  {
+    "email": "admin@local.test",
+    "userId": "admin-local",
+    "page": "/admin",
+    "referrer": "http://localhost:3000/credentials",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T18:18:44.826Z",
+    "ip": "::1"
+  },
+  {
+    "email": "admin@local.test",
+    "userId": "admin-local",
+    "page": "/settings",
+    "referrer": "http://localhost:3000/credentials",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T18:18:48.496Z",
+    "ip": "::1"
+  },
+  {
+    "email": "admin@local.test",
+    "userId": "admin-local",
+    "page": "/market",
+    "referrer": "http://localhost:3000/settings",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T18:18:57.673Z",
+    "ip": "::1"
+  },
+  {
+    "email": "admin@local.test",
+    "userId": "admin-local",
+    "page": "/market",
+    "referrer": "http://localhost:3000/settings",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T18:18:57.694Z",
+    "ip": "::1"
+  },
+  {
+    "email": "admin@local.test",
+    "userId": "admin-local",
+    "page": "/market",
+    "referrer": "http://localhost:3000/settings",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T18:19:04.189Z",
+    "ip": "::1"
+  },
+  {
+    "email": "admin@local.test",
+    "userId": "admin-local",
+    "page": "/about",
+    "referrer": "http://localhost:3000/settings",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T18:19:06.785Z",
+    "ip": "::1"
+  },
+  {
+    "email": "admin@local.test",
+    "userId": "admin-local",
+    "page": "/about",
+    "referrer": "http://localhost:3000/settings",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T18:19:06.792Z",
+    "ip": "::1"
+  },
+  {
+    "email": "admin@local.test",
+    "userId": "admin-local",
+    "page": "/settings",
+    "referrer": "http://localhost:3000/settings",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T18:19:10.402Z",
+    "ip": "::1"
+  },
+  {
+    "email": "admin@local.test",
+    "userId": "admin-local",
+    "page": "/cart",
+    "referrer": "http://localhost:3000/settings",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T18:19:12.427Z",
+    "ip": "::1"
+  },
+  {
+    "email": "admin@local.test",
+    "userId": "admin-local",
+    "page": "/cart",
+    "referrer": "http://localhost:3000/settings",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T18:19:12.430Z",
+    "ip": "::1"
+  },
+  {
+    "email": "admin@local.test",
+    "userId": "admin-local",
+    "page": "/settings",
+    "referrer": "http://localhost:3000/settings",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T18:19:15.505Z",
+    "ip": "::1"
+  },
+  {
+    "email": "admin@local.test",
+    "userId": "admin-local",
+    "page": "/market",
+    "referrer": "http://localhost:3000/settings",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T18:19:26.383Z",
+    "ip": "::1"
+  },
+  {
+    "email": "admin@local.test",
+    "userId": "admin-local",
+    "page": "/market",
+    "referrer": "http://localhost:3000/settings",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T18:19:26.402Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.social@gmail.com",
+    "userId": "usyp8hnr",
+    "page": "/register",
+    "referrer": "http://localhost:3000/credentials",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T18:26:08.061Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.social@gmail.com",
+    "userId": "usyp8hnr",
+    "page": "/market",
+    "referrer": "http://localhost:3000/credentials",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T18:26:09.577Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.social@gmail.com",
+    "userId": "usyp8hnr",
+    "page": "/market",
+    "referrer": "http://localhost:3000/credentials",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T18:26:29.935Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.social@gmail.com",
+    "userId": "0v2z4m1g",
+    "page": "/register",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T18:52:42.012Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.social@gmail.com",
+    "userId": "0v2z4m1g",
+    "page": "/market",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T18:52:43.791Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.social@gmail.com",
+    "userId": "0v2z4m1g",
+    "page": "/market",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T18:52:43.807Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.social@gmail.com",
+    "userId": "0v2z4m1g",
+    "page": "/credentials",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:02:54.307Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.social@gmail.com",
+    "userId": "0v2z4m1g",
+    "page": "/market",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:02:55.962Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.social@gmail.com",
+    "userId": "0v2z4m1g",
+    "page": "/market",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:02:55.982Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "41zmyxn2",
+    "page": "/register",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:04:26.811Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "41zmyxn2",
+    "page": "/",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:05:42.933Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "41zmyxn2",
+    "page": "/",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:05:43.881Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "41zmyxn2",
+    "page": "/",
+    "referrer": "http://localhost:3003/",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:06:21.672Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "41zmyxn2",
+    "page": "/",
+    "referrer": "http://localhost:3003/",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:06:21.694Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "34o2yv5w",
+    "page": "/register",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:09:06.916Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "34o2yv5w",
+    "page": "/market",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:09:08.043Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "34o2yv5w",
+    "page": "/market",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:16:14.187Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "34o2yv5w",
+    "page": "/market",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:16:23.752Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "34o2yv5w",
+    "page": "/credentials",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:21:53.218Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "34o2yv5w",
+    "page": "/market",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:21:54.163Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "34o2yv5w",
+    "page": "/market",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:21:54.174Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "34o2yv5w",
+    "page": "/settings",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:22:04.543Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "34o2yv5w",
+    "page": "/market",
+    "referrer": "http://localhost:3004/settings",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:23:29.277Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "34o2yv5w",
+    "page": "/market",
+    "referrer": "http://localhost:3004/settings",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:23:29.331Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "34o2yv5w",
+    "page": "/market",
+    "referrer": "http://localhost:3003/market",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:24:57.698Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "34o2yv5w",
+    "page": "/market",
+    "referrer": "http://localhost:3004/settings",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:25:53.444Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "34o2yv5w",
+    "page": "/settings",
+    "referrer": "http://localhost:3004/settings",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:25:55.647Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "0c1fknvc",
+    "page": "/register",
+    "referrer": "http://localhost:3004/credentials",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:33:50.325Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "0c1fknvc",
+    "page": "/market",
+    "referrer": "http://localhost:3004/credentials",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:33:51.014Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "0c1fknvc",
+    "page": "/market",
+    "referrer": "http://localhost:3004/credentials",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:37:21.612Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "0c1fknvc",
+    "page": "/",
+    "referrer": "http://localhost:3004/credentials",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:37:26.586Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "34o2yv5w",
+    "page": "/_error",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:40:51.849Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "34o2yv5w",
+    "page": "/",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:40:55.374Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "34o2yv5w",
+    "page": "/",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:40:55.401Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "34o2yv5w",
+    "page": "/settings",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:41:07.353Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "34o2yv5w",
+    "page": "/settings",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:41:07.363Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "34o2yv5w",
+    "page": "/settings",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:41:15.561Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "34o2yv5w",
+    "page": "/market",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:41:17.464Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "34o2yv5w",
+    "page": "/market",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:41:17.496Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "34o2yv5w",
+    "page": "/about",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:41:29.502Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "34o2yv5w",
+    "page": "/about",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:41:29.542Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "34o2yv5w",
+    "page": "/market",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:43:52.424Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "0c1fknvc",
+    "page": "/",
+    "referrer": "http://localhost:3004/credentials",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:45:27.900Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "0c1fknvc",
+    "page": "/",
+    "referrer": "http://localhost:3004/credentials",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:45:48.915Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "0c1fknvc",
+    "page": "/_error",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:46:03.313Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "0c1fknvc",
+    "page": "/_error",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:46:03.315Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "0c1fknvc",
+    "page": "/",
+    "referrer": "http://localhost:3004/credentials",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:46:03.340Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "0c1fknvc",
+    "page": "/_error",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:46:06.181Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "0c1fknvc",
+    "page": "/_error",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:46:06.205Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "0c1fknvc",
+    "page": "/_error",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:46:59.628Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "0c1fknvc",
+    "page": "/_error",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:47:09.180Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "0c1fknvc",
+    "page": "/_error",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:47:11.570Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "0c1fknvc",
+    "page": "/_error",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:47:22.373Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "0c1fknvc",
+    "page": "/_error",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:47:50.438Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "0c1fknvc",
+    "page": "/",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:48:22.380Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "0c1fknvc",
+    "page": "/",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:49:15.910Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "0c1fknvc",
+    "page": "/",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:50:34.405Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "0c1fknvc",
+    "page": "/",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T19:50:57.532Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "0c1fknvc",
+    "page": "/credentials",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T20:01:03.662Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "0c1fknvc",
+    "page": "/market",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T20:01:06.550Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "0c1fknvc",
+    "page": "/market",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T20:01:09.291Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "0c1fknvc",
+    "page": "/market",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T20:01:09.397Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "0c1fknvc",
+    "page": "/settings",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T20:01:15.714Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "0c1fknvc",
+    "page": "/",
+    "referrer": "http://localhost:3000/settings",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T20:01:57.757Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "0c1fknvc",
+    "page": "/",
+    "referrer": "http://localhost:3000/settings",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T20:01:57.783Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "0c1fknvc",
+    "page": "/settings",
+    "referrer": "http://localhost:3000/settings",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T20:02:20.221Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "qeqvr50o",
+    "page": "/register",
+    "referrer": "http://localhost:3000/credentials",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T20:13:02.408Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "qeqvr50o",
+    "page": "/market",
+    "referrer": "http://localhost:3000/credentials",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T20:13:03.100Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "qeqvr50o",
+    "page": "/market",
+    "referrer": "http://localhost:3000/credentials",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T20:16:15.876Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "qeqvr50o",
+    "page": "/market",
+    "referrer": "http://localhost:3000/credentials",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T20:21:26.759Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "qeqvr50o",
+    "page": "/credentials",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T20:23:06.175Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "qeqvr50o",
+    "page": "/market",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T20:23:07.124Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "qeqvr50o",
+    "page": "/market",
+    "referrer": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T20:24:28.824Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "qeqvr50o",
+    "page": "/market",
+    "referrer": "http://localhost:3000/market",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T20:27:00.702Z",
+    "ip": "::1"
+  },
+  {
+    "email": "kdbburns.za@gmail.com",
+    "userId": "qeqvr50o",
+    "page": "/market",
+    "referrer": "http://localhost:3000/market",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "timestamp": "2026-01-08T20:27:00.691Z",
+    "ip": "::1"
+  }
+]

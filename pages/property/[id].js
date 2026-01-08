@@ -14,6 +14,9 @@ export default function PropertyDetail(){
   const [listing, setListing] = useState(null)
   const [loadingListing, setLoadingListing] = useState(false)
   const [displayCurrency, setDisplayCurrency] = useState('ZAR')
+  const [agentRatings, setAgentRatings] = useState(null)
+  const [showTransaction, setShowTransaction] = useState(false)
+  const [transactionLoading, setTransactionLoading] = useState(false)
   const staticListing = properties.find(p => String(p.id) === String(id))
 
   useEffect(()=>{
@@ -52,6 +55,19 @@ export default function PropertyDetail(){
       .catch(()=>setClaim(null))
       .finally(()=>setLoadingClaim(false))
   },[id])
+
+  // Load agent ratings when claim is resolved
+  useEffect(() => {
+    if (!claim?.agentEmail) {
+      setAgentRatings(null)
+      return
+    }
+
+    fetch(`/api/ratings/agent?email=${encodeURIComponent(claim.agentEmail)}`)
+      .then(r => r.json())
+      .then(d => setAgentRatings(d))
+      .catch(() => setAgentRatings(null))
+  }, [claim?.agentEmail])
 
   if(!listing){
     return (
@@ -121,8 +137,48 @@ export default function PropertyDetail(){
       }
       const s = await fetch(`/api/claims/status?propertyId=${encodeURIComponent(String(listing.id))}`).then(r=>r.json()).catch(()=> null)
       setClaim(s?.claim || null)
+
+      // Track engagement event
+      fetch('/api/engagement/events', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          eventType: 'inquiry_sent',
+          propertyId: listing.id,
+          metadata: { title: listing.title }
+        })
+      }).catch(() => {})
     }catch{
       alert('Unable to claim listing')
+    }
+  }
+
+  const handleCompleteTransaction = async () => {
+    if (!claim?.agentEmail || !listing) return
+    
+    setTransactionLoading(true)
+    try {
+      const res = await fetch('/api/revenue/transactions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          propertyId: listing.id,
+          listingPrice: listing.price,
+          agentEmail: claim.agentEmail,
+          buyerEmail: session?.user?.email || null,
+          description: `Transaction for ${listing.title}`
+        })
+      })
+
+      const data = await res.json()
+      if (!res.ok) throw new Error(data.error || 'Failed to log transaction')
+      
+      alert('Transaction recorded successfully!')
+      setShowTransaction(false)
+    } catch (e) {
+      alert(e.message || 'Failed to record transaction')
+    } finally {
+      setTransactionLoading(false)
     }
   }
 
@@ -155,6 +211,32 @@ export default function PropertyDetail(){
 
           <div style={{marginTop:14,color:'#374151'}}>{listing.description}</div>
 
+          {/* Agent Rating Section */}
+          {claim && agentRatings && (
+            <div style={{
+              marginTop: 20,
+              padding: 16,
+              background: 'rgba(251, 146, 60, 0.08)',
+              border: '1px solid rgba(251, 146, 60, 0.2)',
+              borderRadius: 8
+            }}>
+              <h4 style={{ marginTop: 0, marginBottom: 10 }}>Agent Rating</h4>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                <div style={{ fontSize: 28, fontWeight: 700 }}>
+                  {agentRatings.averageRating || 'New'}
+                </div>
+                <div>
+                  <div style={{ fontSize: 12, color: '#666' }}>
+                    Average rating from {agentRatings.totalReviews || 0} review{agentRatings.totalReviews !== 1 ? 's' : ''}
+                  </div>
+                  <a href="/ratings" style={{ fontSize: 12, color: '#4f46e5', textDecoration: 'none', marginTop: 4, display: 'inline-block' }}>
+                    Rate this agent →
+                  </a>
+                </div>
+              </div>
+            </div>
+          )}
+
           <div style={{display:'flex',gap:10,marginTop:18,flexWrap:'wrap'}}>
             <button className="btn btn-outline" onClick={()=>router.push('/market')}>Back</button>
             {!claim ? (
@@ -179,7 +261,56 @@ export default function PropertyDetail(){
                 Call
               </a>
             ) : null}
+            {claim && session ? (
+              <button className="btn btn-ghost" onClick={() => setShowTransaction(!showTransaction)}>
+                {showTransaction ? 'Cancel Transaction' : 'Complete Transaction'}
+              </button>
+            ) : null}
           </div>
+
+          {/* Transaction Modal */}
+          {showTransaction && claim && (
+            <div style={{
+              marginTop: 20,
+              padding: 16,
+              background: '#f3f4f6',
+              border: '1px solid #d1d5db',
+              borderRadius: 8
+            }}>
+              <h4 style={{ marginTop: 0 }}>Complete Transaction</h4>
+              <p style={{ fontSize: 14, color: '#666' }}>
+                Log this transaction for revenue tracking and agent commission calculation.
+              </p>
+              <div style={{
+                background: 'white',
+                padding: 12,
+                borderRadius: 6,
+                marginBottom: 12,
+                fontSize: 14
+              }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
+                  <span>Property:</span>
+                  <span style={{ fontWeight: 600 }}>{listing.title}</span>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
+                  <span>Agent:</span>
+                  <span style={{ fontWeight: 600 }}>{agentName}</span>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', borderTop: '1px solid #e5e7eb', paddingTop: 8 }}>
+                  <span>Transaction Value:</span>
+                  <span style={{ fontWeight: 700, fontSize: 16 }}>{priceText}</span>
+                </div>
+              </div>
+              <button 
+                className="btn btn-primary" 
+                onClick={handleCompleteTransaction}
+                disabled={transactionLoading}
+                style={{ width: '100%' }}
+              >
+                {transactionLoading ? 'Recording…' : 'Confirm & Record Transaction'}
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>

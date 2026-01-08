@@ -1,8 +1,8 @@
 import '../styles/globals.css'
 import { SessionProvider, useSession } from 'next-auth/react'
-import { useEffect } from 'react'
 import { WebcamProvider } from '../components/WebcamContext'
-import WebcamRequiredGate from '../components/WebcamRequiredGate'
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
 
 function SessionTracker(){
   const { data: session, status } = useSession()
@@ -32,6 +32,51 @@ function SessionTracker(){
       })()
     }
   },[status, session])
+
+  return null
+}
+
+function PageViewTracker(){
+  const { data: session, status } = useSession()
+  const router = useRouter()
+
+  useEffect(()=>{
+    if(status !== 'authenticated' || !session?.user?.email) return
+
+    const trackPageView = async (url) => {
+      try{
+        const payload = {
+          email: session.user.email,
+          userId: session.user.id || null,
+          page: url,
+          referrer: typeof document !== 'undefined' ? document.referrer : null,
+          userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : null,
+          timestamp: new Date().toISOString()
+        }
+        await fetch('/api/tracking/page-view', {
+          method: 'POST',
+          headers: {'Content-Type':'application/json'},
+          body: JSON.stringify(payload)
+        }).catch(()=>null)
+      }catch(e){
+        console.error('Page view tracking failed', e)
+      }
+    }
+
+    // Track initial page load
+    trackPageView(router.pathname)
+
+    // Track route changes
+    const handleRouteChange = (url) => {
+      trackPageView(url)
+    }
+
+    router.events.on('routeChangeComplete', handleRouteChange)
+
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange)
+    }
+  },[status, session, router.pathname, router.events])
 
   return null
 }
@@ -80,9 +125,8 @@ export default function App({ Component, pageProps: { session, ...pageProps } })
       <WebcamProvider>
         <BackgroundPointerTracker />
         <SessionTracker />
-        <WebcamRequiredGate>
-          <Component {...pageProps} />
-        </WebcamRequiredGate>
+        <PageViewTracker />
+        <Component {...pageProps} />
       </WebcamProvider>
     </SessionProvider>
   )

@@ -1,5 +1,105 @@
 [
   {
+    "id": "a_mk5rtxog419j",
+    "at": "2026-01-08T18:18:54.016Z",
+    "actorEmail": "admin@local.test",
+    "action": "USER_SETTINGS_UPDATE",
+    "targetType": "user_settings",
+    "targetId": "admin@local.test",
+    "data": {
+      "primaryTool": "buyer",
+      "tools": 2
+    }
+  },
+  {
+    "id": "a_mk5r9qe9dmcf",
+    "at": "2026-01-08T18:03:11.457Z",
+    "actorEmail": "kdbburns.social@gmail.com",
+    "action": "USER_SETTINGS_UPDATE",
+    "targetType": "user_settings",
+    "targetId": "kdbburns.social@gmail.com",
+    "data": {
+      "primaryTool": "agent",
+      "tools": 1
+    }
+  },
+  {
+    "id": "a_mk5q4aml79xh",
+    "at": "2026-01-08T17:30:58.125Z",
+    "actorEmail": "kdbburns.social@gmail.com",
+    "action": "USER_SETTINGS_UPDATE",
+    "targetType": "user_settings",
+    "targetId": "kdbburns.social@gmail.com",
+    "data": {
+      "primaryTool": "agent",
+      "tools": 1
+    }
+  },
+  {
+    "id": "a_mk5q46tngtti",
+    "at": "2026-01-08T17:30:53.195Z",
+    "actorEmail": "kdbburns.social@gmail.com",
+    "action": "USER_SETTINGS_UPDATE",
+    "targetType": "user_settings",
+    "targetId": "kdbburns.social@gmail.com",
+    "data": {
+      "primaryTool": "agent",
+      "tools": 1
+    }
+  },
+  {
+    "id": "a_mk34gv4vwc1y",
+    "at": "2026-01-06T21:49:20.672Z",
+    "actorEmail": "admin@local.test",
+    "action": "PURCHASE_STATUS_UPDATED",
+    "targetType": "purchase",
+    "targetId": "purch_mk342dnq1jmv",
+    "data": {
+      "status": "accepted",
+      "propertyAddress": "your mamas house",
+      "landTaxRate": "2.2",
+      "closingDate": ""
+    }
+  },
+  {
+    "id": "a_mk344oa4nbsm",
+    "at": "2026-01-06T21:39:51.916Z",
+    "actorEmail": "admin@local.test",
+    "action": "USER_SETTINGS_UPDATE",
+    "targetType": "user_settings",
+    "targetId": "admin@local.test",
+    "data": {
+      "primaryTool": "buyer",
+      "tools": 2
+    }
+  },
+  {
+    "id": "a_mk344l3jedfk",
+    "at": "2026-01-06T21:39:47.791Z",
+    "actorEmail": "admin@local.test",
+    "action": "USER_SETTINGS_UPDATE",
+    "targetType": "user_settings",
+    "targetId": "admin@local.test",
+    "data": {
+      "primaryTool": "buyer",
+      "tools": 2
+    }
+  },
+  {
+    "id": "a_mk342do0x2vs",
+    "at": "2026-01-06T21:38:04.848Z",
+    "actorEmail": "admin@local.test",
+    "action": "PURCHASE_OFFER_CREATED",
+    "targetType": "purchase",
+    "targetId": "purch_mk342dnq1jmv",
+    "data": {
+      "propertyId": 4,
+      "listingPrice": 850000,
+      "offeredPrice": 425000,
+      "agentEmail": "admin@local.test"
+    }
+  },
+  {
     "id": "a_mjypkr534wlg",
     "at": "2026-01-03T19:41:23.175Z",
     "actorEmail": "admin@local.test",

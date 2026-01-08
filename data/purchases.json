@@ -1,0 +1,22 @@
+[
+  {
+    "id": "purch_mk342dnq1jmv",
+    "propertyId": "4",
+    "listingPrice": 850000,
+    "offeredPrice": 425000,
+    "agentEmail": "admin@local.test",
+    "buyerEmail": "admin@local.test",
+    "notes": "Thanks very much for your Tender cutipie.",
+    "status": "accepted",
+    "createdAt": "2026-01-06T21:38:04.838Z",
+    "expiresAt": "2026-01-13T21:38:04.838Z",
+    "updatedAt": "2026-01-06T21:49:20.279Z",
+    "propertyAddress": "your mamas house",
+    "propertyDetails": "the hottest place your visit",
+    "acceptedAt": "2026-01-06T21:49:20.281Z",
+    "acceptedBy": "admin@local.test",
+    "landTaxRate": 2.2,
+    "landTaxAmount": 18700,
+    "closingDate": ""
+  }
+]

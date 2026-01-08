@@ -1,0 +1,11 @@
+[
+  {
+    "id": "0c1fknvc",
+    "email": "kdbburns.za@gmail.com",
+    "name": "Kyle Blackburn",
+    "passwordHash": "$2a$10$YjR4Z9p3RQ7CTeGxin1.gOT1YA603HO9L7k7wNDQ7qc0YaSh6tizS",
+    "role": "buyer",
+    "createdAt": "2026-01-08T19:33:43.597Z",
+    "deletedAt": "2026-01-08T20:01:56.369Z"
+  }
+]

@@ -1,0 +1,67 @@
+{
+  "admin@local.test": {
+    "primaryTool": "buyer",
+    "tools": [
+      "buyer",
+      "agent"
+    ],
+    "notifications": {
+      "priceAlerts": true,
+      "newListings": true,
+      "messages": true,
+      "reviews": true
+    },
+    "preferences": {
+      "currency": "ZAR",
+      "timeZone": "Africa/Johannesburg",
+      "maxPriceRange": 10000000,
+      "minPriceRange": 50000,
+      "interestCategories": []
+    },
+    "buyingSettings": {
+      "maxBidAboveAskingPrice": 0.02,
+      "autoOfferOnNewListings": false,
+      "offerExpiryDays": 7,
+      "fairPriceCalcMethod": "market_average"
+    },
+    "privacy": {
+      "showProfile": true,
+      "allowContactFromAgents": true,
+      "allowFriendRequests": true
+    },
+    "createdAt": "2026-01-06T21:39:47.787Z",
+    "updatedAt": "2026-01-08T18:18:54.011Z"
+  },
+  "kdbburns.social@gmail.com": {
+    "primaryTool": "agent",
+    "tools": [
+      "agent"
+    ],
+    "notifications": {
+      "priceAlerts": true,
+      "newListings": true,
+      "messages": true,
+      "reviews": true
+    },
+    "preferences": {
+      "currency": "ZAR",
+      "timeZone": "Africa/Johannesburg",
+      "maxPriceRange": 10000000,
+      "minPriceRange": 50000,
+      "interestCategories": []
+    },
+    "buyingSettings": {
+      "maxBidAboveAskingPrice": 0.05,
+      "autoOfferOnNewListings": false,
+      "offerExpiryDays": 7,
+      "fairPriceCalcMethod": "market_average"
+    },
+    "privacy": {
+      "showProfile": true,
+      "allowContactFromAgents": true,
+      "allowFriendRequests": true
+    },
+    "createdAt": "2026-01-08T17:30:53.190Z",
+    "updatedAt": "2026-01-08T18:03:11.453Z"
+  }
+}
