@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar'
 import { USER_TOOLS, TOOL_DESCRIPTIONS } from '../lib/userSettings'
 
 export default function UserSettings() {
-  const { data: session, status } = useSession()
+  const { data: session, status } = useSession() ?? {}
   const [settings, setSettings] = useState(null)
   const [loading, setLoading] = useState(true)
   const [saving, setSaving] = useState(false)

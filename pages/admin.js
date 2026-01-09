@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar'
 import Link from 'next/link'
 
 export default function AdminPage(){
-  const { data: session, status } = useSession()
+  const { data: session, status } = useSession() ?? {}
   const email = session?.user?.email || ''
   const isAdmin = email === 'admin@local.test'
 

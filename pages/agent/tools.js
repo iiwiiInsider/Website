@@ -6,7 +6,7 @@ import { ALLOWED_NEIGHBORHOODS, normalizeNeighborhood } from '../../lib/neighbor
 import { currencyForTimeZone } from '../../lib/currency'
 
 export default function AgentTools(){
-  const { data: session, status } = useSession()
+  const { data: session, status } = useSession() ?? {}
 
   const MAX_IMAGES = 15
   const MAX_IMAGE_BYTES = 1_000_000

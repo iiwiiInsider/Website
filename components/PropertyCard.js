@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 
 export default function PropertyCard({ p, claim, canClaim, onClaimed, formatPrice, onEdit, onDelete }){
   const router = useRouter()
-  const { data: session } = useSession()
+  const session = (useSession() ?? {}).data
   const [preferredTool, setPreferredTool] = useState('')
   const [addingToCart, setAddingToCart] = useState(false)
 

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useSession, signIn } from 'next-auth/react'
 
 export default function AgentProfileEditor({ showHeader = true }){
-  const { data: session, status } = useSession()
+  const { data: session, status } = useSession() ?? {}
   const [form, setForm] = useState({
     displayName: '',
     agentEmail: '',

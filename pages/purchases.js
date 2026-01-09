@@ -3,7 +3,7 @@ import { useSession } from 'next-auth/react'
 import Navbar from '../components/Navbar'
 
 export default function MyPurchases() {
-  const { data: session, status } = useSession()
+  const { data: session, status } = useSession() ?? {}
   const [purchases, setPurchases] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)

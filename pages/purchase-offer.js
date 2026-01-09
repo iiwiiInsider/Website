@@ -7,7 +7,7 @@ import { generateFairOffer } from '../lib/userSettings'
 export default function PurchaseOffer() {
   const router = useRouter()
   const { propertyId } = router.query
-  const { data: session } = useSession()
+  const { data: session } = useSession() ?? {}
 
   const [listing, setListing] = useState(null)
   const [claim, setClaim] = useState(null)

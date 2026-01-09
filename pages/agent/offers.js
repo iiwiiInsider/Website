@@ -3,7 +3,7 @@ import { useSession, signIn } from 'next-auth/react'
 import Navbar from '../../components/Navbar'
 
 export default function AgentOffers() {
-  const { data: session, status } = useSession()
+  const { data: session, status } = useSession() ?? {}
   const [offers, setOffers] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)

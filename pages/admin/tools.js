@@ -6,7 +6,7 @@ import { formatFromZar } from '../../lib/currency'
 import { ALLOWED_NEIGHBORHOODS, normalizeNeighborhood } from '../../lib/neighborhoods'
 
 export default function AdminTools(){
-  const { data: session, status } = useSession()
+  const { data: session, status } = useSession() ?? {}
   const isAdmin = String(session?.user?.email || '').trim().toLowerCase() === 'admin@local.test'
 
   const [listings, setListings] = useState([])

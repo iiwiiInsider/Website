@@ -4,7 +4,7 @@ import Navbar from '../../components/Navbar'
 import Link from 'next/link'
 
 export default function AdminListings(){
-  const { data: session, status } = useSession()
+  const { data: session, status } = useSession() ?? {}
   const [listings, setListings] = useState([])
   const [users, setUsers] = useState([])
   const [loading, setLoading] = useState(true)

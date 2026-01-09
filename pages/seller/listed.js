@@ -4,7 +4,7 @@ import Navbar from '../../components/Navbar'
 import PropertyCard from '../../components/PropertyCard'
 
 export default function SellerListed(){
-  const { data: session, status } = useSession()
+  const { data: session, status } = useSession() ?? {}
   const [listings, setListings] = useState([])
   const [statusMap, setStatusMap] = useState({})
   const [filter, setFilter] = useState('all') // all | listed | sold

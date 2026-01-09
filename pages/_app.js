@@ -1,5 +1,6 @@
 import '../styles/globals.css'
 import { useEffect } from 'react'
+import { SessionProvider } from 'next-auth/react'
 
 function BackgroundPointerTracker(){
   useEffect(()=>{
@@ -42,8 +43,10 @@ function BackgroundPointerTracker(){
 export default function App({ Component, pageProps }) {
   return (
     <>
-      <BackgroundPointerTracker />
-      <Component {...pageProps} />
+      <SessionProvider session={pageProps?.session}>
+        <BackgroundPointerTracker />
+        <Component {...pageProps} />
+      </SessionProvider>
     </>
   )
 }

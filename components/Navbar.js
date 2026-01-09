@@ -3,7 +3,8 @@ import { useEffect, useState } from 'react'
 import { useSession, signOut } from 'next-auth/react'
 
 export default function Navbar(){
-  const { data: session } = useSession()
+  const sessionHook = useSession()
+  const session = sessionHook?.data
   const email = session?.user?.email || ''
   const isAdmin = email === 'admin@local.test'
   const [preferredTool, setPreferredTool] = useState('')

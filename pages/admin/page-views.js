@@ -3,7 +3,7 @@ import { useSession } from 'next-auth/react'
 import Navbar from '../../components/Navbar'
 
 export default function PageViews(){
-  const { data: session, status } = useSession()
+  const { data: session, status } = useSession() ?? {}
   const [pageViews, setPageViews] = useState([])
   const [loading, setLoading] = useState(true)
   const [filter, setFilter] = useState('')

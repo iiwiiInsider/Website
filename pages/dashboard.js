@@ -3,7 +3,7 @@ import { useSession } from 'next-auth/react'
 import Navbar from '../components/Navbar'
 
 export default function Dashboard() {
-  const { data: session, status } = useSession()
+  const { data: session, status } = useSession() ?? {}
   const [dashboard, setDashboard] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -11,6 +11,7 @@ export default function Dashboard() {
   const [adminUsers, setAdminUsers] = useState([])
   const [adminLogins, setAdminLogins] = useState([])
 
+  
   useEffect(() => {
     if (status === 'unauthenticated') {
       setLoading(false)

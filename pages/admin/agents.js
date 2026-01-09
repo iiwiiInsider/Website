@@ -3,7 +3,7 @@ import { useSession } from 'next-auth/react'
 import Navbar from '../../components/Navbar'
 
 export default function ManageAgents(){
-  const { data: session, status } = useSession()
+  const { data: session, status } = useSession() ?? {}
   const isAdmin = (session?.user?.email || '') === 'admin@local.test'
 
   const [agents, setAgents] = useState([])

@@ -4,7 +4,7 @@ import Navbar from '../../components/Navbar'
 import Link from 'next/link'
 
 export default function UserManagement(){
-  const { data: session, status } = useSession()
+  const { data: session, status } = useSession() ?? {}
   const [users, setUsers] = useState([])
   const [loading, setLoading] = useState(true)
   const [filter, setFilter] = useState('')
