@@ -53,7 +53,8 @@ export const authOptions = {
   ].filter(Boolean),
   secret: process.env.NEXTAUTH_SECRET,
   pages: {
-    signIn: '/login'
+    signIn: '/login',
+    error: '/auth-error'
   },
   callbacks: {
     async signIn({ user, account, profile }){
