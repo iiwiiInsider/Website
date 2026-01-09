@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "id": "lotk0xrr",
+    "email": "kdbburns.za@gmail.com",
+    "name": "Kyle Blackburn",
+    "passwordHash": "$2a$10$ob2OqjT//SQdIO4b/XTOqu1C.hIFN48oNjolQMGdlnIT3/HiNzJZG",
+    "role": "buyer",
+    "createdAt": "2026-01-09T05:53:59.331Z"
+  },
+  {
+    "id": "admin_local",
+    "email": "admin@local.test",
+    "name": "Admin",
+    "passwordHash": "$2a$10$LahHXxnxtbLbuPN4judpZOBYMaMp1o9VkdVLj/ZZ/fdyw2Hmwo0ue",
+    "role": "buyer",
+    "createdAt": "2026-01-09T06:00:00.000Z"
+  }
+]

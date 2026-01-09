@@ -63,5 +63,41 @@
     },
     "createdAt": "2026-01-08T17:30:53.190Z",
     "updatedAt": "2026-01-08T18:03:11.453Z"
+  },
+  "kdbburns.za@gmail.com": {
+    "primaryTool": "buyer",
+    "tools": [
+      "buyer"
+    ],
+    "emailVerified": true,
+    "emailVerifiedAt": "2026-01-09T06:16:55.153Z",
+    "notifications": {
+      "priceAlerts": true,
+      "newListings": true,
+      "messages": true,
+      "reviews": true
+    },
+    "preferences": {
+      "currency": "ZAR",
+      "timeZone": "Africa/Johannesburg",
+      "maxPriceRange": 10000000,
+      "minPriceRange": 50000,
+      "interestCategories": []
+    },
+    "buyingSettings": {
+      "maxBidAboveAskingPrice": 0.05,
+      "autoOfferOnNewListings": false,
+      "offerExpiryDays": 7,
+      "fairPriceCalcMethod": "market_average"
+    },
+    "privacy": {
+      "showProfile": true,
+      "allowContactFromAgents": true,
+      "allowFriendRequests": true
+    },
+    "createdAt": "2026-01-09T06:16:55.153Z",
+    "updatedAt": "2026-01-09T06:16:55.153Z",
+    "twoFAEnabled": true,
+    "twoFASecret": "LYSV4LDRKRSEOMDJIZYHOLBJNR4EIOBZF4YVUJCPG5CHISS2IVAA"
   }
 }

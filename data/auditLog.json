@@ -1,5 +1,23 @@
 [
   {
+    "id": "a_mk6hnz9lcju2",
+    "at": "2026-01-09T06:22:06.153Z",
+    "actorEmail": "kdbburns.za@gmail.com",
+    "action": "USER_2FA_ENABLED",
+    "targetType": "user",
+    "targetId": "kdbburns.za@gmail.com",
+    "data": null
+  },
+  {
+    "id": "a_mk6hhbau4c39",
+    "at": "2026-01-09T06:16:55.158Z",
+    "actorEmail": "kdbburns.za@gmail.com",
+    "action": "USER_EMAIL_VERIFIED",
+    "targetType": "user",
+    "targetId": "kdbburns.za@gmail.com",
+    "data": null
+  },
+  {
     "id": "a_mk5rtxog419j",
     "at": "2026-01-08T18:18:54.016Z",
     "actorEmail": "admin@local.test",

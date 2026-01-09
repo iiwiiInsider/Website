@@ -75,6 +75,45 @@ export default function Cart(){
     }
   }
 
+  const placeOrder = async () => {
+    if(cartListings.length === 0) return
+    
+    const confirmed = confirm(`Place order for ${cartListings.length} item(s) totaling R${totalPrice.toLocaleString()}?`)
+    if(!confirmed) return
+
+    try{
+      // Create purchase offers for each item
+      const promises = cartListings.map(async (listing) => {
+        const res = await fetch('/api/user/purchases', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({
+            propertyId: listing.id,
+            listingPrice: listing.price,
+            offeredPrice: listing.price,
+            agentEmail: listing.agentEmail || 'agent@local.test',
+            notes: 'Order placed from cart'
+          })
+        })
+        return res.ok
+      })
+
+      const results = await Promise.all(promises)
+      const successCount = results.filter(Boolean).length
+
+      if(successCount > 0){
+        await clearCart()
+        alert(`Successfully placed ${successCount} order(s)! Check your purchases page for details.`)
+        router.push('/purchases')
+      } else {
+        alert('Failed to place orders. Please try again.')
+      }
+    }catch(e){
+      console.error('Failed to place order:', e)
+      alert('Failed to place order. Please try again.')
+    }
+  }
+
   if(status === 'loading' || loading){
     return (
       <div>
@@ -178,8 +217,8 @@ export default function Cart(){
                   </div>
                   <div style={{display:'flex',gap:12,flexWrap:'wrap'}}>
                     <Link href="/market"><button className="btn btn-outline">Continue Shopping</button></Link>
-                    <button className="btn btn-primary" style={{fontSize:16,padding:'12px 24px'}}>
-                      Proceed to Checkout
+                    <button className="btn btn-primary" onClick={placeOrder} style={{fontSize:16,padding:'12px 24px'}}>
+                      Place Order
                     </button>
                   </div>
                 </div>

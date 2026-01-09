@@ -328,7 +328,14 @@ a:hover{text-decoration:underline}
 
 /* Hero */
 /* Landing */
-.landing{padding-top:22px;padding-bottom:30px}
+.landing{
+  padding-top:22px;
+  padding-bottom:30px;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
 .landing-hero{
   position:relative;
   border-radius:18px;
@@ -345,6 +352,7 @@ a:hover{text-decoration:underline}
   min-height: 420px;
   display:flex;
   align-items:center;
+  flex:1;
 }
 
 .landing-hero::before{

@@ -7,6 +7,8 @@ export default function Navbar(){
   const session = sessionHook?.data
   const email = session?.user?.email || ''
   const isAdmin = email === 'admin@local.test'
+  const hasEmail = Boolean(session?.user?.email)
+  const isAuthed = Boolean(session)
   const [preferredTool, setPreferredTool] = useState('')
   const [cartCount, setCartCount] = useState(0)
 
@@ -46,13 +48,28 @@ export default function Navbar(){
 
   const role = String(preferredTool || '').toLowerCase()
   const isBuyer = role === 'buyer'
+
+  if(!hasEmail){
+    return null
+  }
   return (
     <header className="nav">
       <div className="nav-inner container" style={{ justifyContent: 'center' }}>
         <nav className="nav-links">
-          <Link href="/about">About Us</Link>
-          <Link href="/market">Market</Link>
-          {session && (
+          {isAuthed && (
+            <>
+              <Link href="/about">About Us</Link>
+              <Link href="/market">Market</Link>
+            </>
+          )}
+          {isAuthed && isAdmin && (
+            <Link href="/admin/dashboard">
+              <button className="btn btn-ghost" style={{color:'#ff0000',fontWeight:'bold'}}>
+                ⚙️ Admin
+              </button>
+            </Link>
+          )}
+          {isAuthed && (
             <>
               <Link href="/settings">Profile Settings</Link>
               <Link href="/cart" style={{position:'relative'}}>
@@ -76,7 +93,7 @@ export default function Navbar(){
               </Link>
             </>
           )}
-          {session?
+          {isAuthed?
             <>
               <span className="nav-user" style={{display:'flex',flexDirection:'column',lineHeight:1.1}}>
                 <span style={{fontWeight:700}}>{isAdmin ? 'Admin' : 'Buyer'}</span>

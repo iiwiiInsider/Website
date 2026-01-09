@@ -173,38 +173,43 @@ export default function AdminTools(){
   return (
     <div>
       <Navbar />
-      <div className="container">
-        <div className="card">
+      <div className="container" style={{marginTop:24, display:'grid', gap:16}}>
+        <div className="card" style={{
+          background:'linear-gradient(135deg, #120422 0%, #241040 45%, #3a1a66 100%)',
+          color:'#e5e7ff',
+          padding:'22px',
+          border:'1px solid rgba(255,255,255,0.08)',
+          boxShadow:'0 16px 40px rgba(10, 0, 25, 0.45)',
+          backdropFilter:'blur(4px)'
+        }}>
           <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',gap:12,flexWrap:'wrap'}}>
             <div>
-              <h2 style={{marginTop:0,marginBottom:6}}>Admin Tools</h2>
-              <div className="small" style={{opacity:0.85}}>Signed in as <strong>{session.user.email}</strong></div>
-              <div className="small" style={{opacity:0.85,marginTop:6}}>Admin can edit existing front-end content and delete items.</div>
-            </div>
-            <div style={{display:'flex',gap:10,flexWrap:'wrap',alignItems:'center'}}>
-              <Link href="/admin/agents"><button className="btn btn-primary">Manage Agents</button></Link>
+              <div style={{fontSize:13,letterSpacing:1,opacity:0.8,textTransform:'uppercase'}}>Admin Settings</div>
+              <h2 style={{margin:'6px 0 4px 0'}}>Admin Tools</h2>
+              <div className="small" style={{opacity:0.9,color:'#cbd5ff'}}>Signed in as <strong>{session.user.email}</strong></div>
+              <div className="small" style={{opacity:0.85,marginTop:6,color:'#cbd5ff'}}>Edit uploaded listings and perform maintenance.</div>
             </div>
           </div>
         </div>
 
-        <div className="card">
+        <div className="card" style={{ background:'linear-gradient(135deg, rgba(18,4,34,0.88) 0%, rgba(25,13,45,0.95) 100%)', border:'1px solid rgba(255,255,255,0.06)', color:'#e5e7ff' }}>
           <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',gap:12,flexWrap:'wrap'}}>
             <div>
               <h3 style={{marginTop:0,marginBottom:6}}>Market Listings (Uploaded)</h3>
-              <div className="small" style={{opacity:0.85}}>Admin edit for user-uploaded market listings only.</div>
+              <div className="small" style={{opacity:0.85,color:'#cbd5ff'}}>Admin edit for user-uploaded market listings only.</div>
             </div>
             <button className="btn btn-outline" onClick={loadListings} disabled={listingsLoading}>{listingsLoading ? 'Refreshing…' : 'Refresh'}</button>
           </div>
-          {listingsError ? <div className="small" style={{color:'#b91c1c',marginTop:10}}>{listingsError}</div> : null}
+          {listingsError ? <div className="small" style={{color:'#fca5a5',marginTop:10}}>{listingsError}</div> : null}
 
           <div style={{marginTop:12,display:'grid',gap:10}}>
-            {uploadedListings.length === 0 ? <div className="small" style={{opacity:0.7}}>No uploaded listings found.</div> : null}
+            {uploadedListings.length === 0 ? <div className="small" style={{opacity:0.75,color:'#cbd5ff'}}>No uploaded listings found.</div> : null}
             {uploadedListings.map(l => (
-              <div key={l.id} style={{display:'flex',justifyContent:'space-between',gap:12,flexWrap:'wrap',alignItems:'center',padding:'10px 12px',border:'1px solid var(--border)',borderRadius:10}}>
+              <div key={l.id} style={{display:'flex',justifyContent:'space-between',gap:12,flexWrap:'wrap',alignItems:'center',padding:'10px 12px',border:'1px solid rgba(255,255,255,0.08)',borderRadius:10, background:'rgba(255,255,255,0.02)'}}>
                 <div>
-                  <div style={{fontWeight:800}}>{l.title}</div>
-                  <div className="small" style={{opacity:0.85}}>{l.listingType} • {l.neighborhood} • {l.city}</div>
-                  <div className="small" style={{opacity:0.85}}>{formatFromZar(l.price, 'ZAR')}</div>
+                  <div style={{fontWeight:800,color:'#f8f9ff'}}>{l.title}</div>
+                  <div className="small" style={{opacity:0.85,color:'#d1d5ff'}}>{l.listingType} • {l.neighborhood} • {l.city}</div>
+                  <div className="small" style={{opacity:0.9,color:'#d1d5ff'}}>{formatFromZar(l.price, 'ZAR')}</div>
                 </div>
                 <div style={{display:'flex',gap:10,flexWrap:'wrap',justifyContent:'flex-end'}}>
                   <button className="btn btn-outline" onClick={()=>startEdit(l)}>Edit</button>
@@ -216,10 +221,10 @@ export default function AdminTools(){
         </div>
 
         {editingListing ? (
-          <div ref={editRef} className="card" style={{marginTop:16}}>
+          <div ref={editRef} className="card" style={{marginTop:16, background:'linear-gradient(135deg, rgba(18,4,34,0.92) 0%, rgba(30,16,52,0.95) 100%)', border:'1px solid rgba(255,255,255,0.06)', color:'#e5e7ff'}}>
             <h3 style={{marginTop:0}}>Edit Listing</h3>
-            <div className="small" style={{opacity:0.85,marginBottom:10}}>Editing: <strong>{editingListing.id}</strong></div>
-            {editError ? <div className="small" style={{color:'#b91c1c',marginBottom:10}}>{editError}</div> : null}
+            <div className="small" style={{opacity:0.85,marginBottom:10,color:'#cbd5ff'}}>Editing: <strong>{editingListing.id}</strong></div>
+            {editError ? <div className="small" style={{color:'#fca5a5',marginBottom:10}}>{editError}</div> : null}
 
             <div style={{display:'grid',gap:8}}>
               <select className="input" value={editForm.listingType} onChange={e=>setEditForm(f=>({...f, listingType: e.target.value}))}>

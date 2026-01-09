@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
 import Head from 'next/head'
+import { useSession } from 'next-auth/react'
 import properties from '../../data/properties'
 import Navbar from '../../components/Navbar'
 import Link from 'next/link'
@@ -8,13 +9,28 @@ import Link from 'next/link'
 export default function PropertyDetail(){
   const router = useRouter()
   const { id } = router.query
+  const { status } = useSession() ?? {}
   const [listing, setListing] = useState(null)
+
+  useEffect(() => {
+    if(status === 'unauthenticated'){
+      router.replace(`/login?redirect=/property/${id || ''}`)
+    }
+  }, [status, router, id])
 
   useEffect(() => {
     if(!id) return
     const found = properties.find(p => String(p.id) === String(id))
     setListing(found || null)
   }, [id])
+
+  if(status === 'loading' || status === 'unauthenticated'){
+    return (
+      <div className="container" style={{padding:40,textAlign:'center'}}>
+        <p className="landing-muted">Checking your access...</p>
+      </div>
+    )
+  }
 
   if(!listing){
     return (

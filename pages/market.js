@@ -1,12 +1,22 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
+import { useSession } from 'next-auth/react'
 import properties from '../data/properties'
 import Navbar from '../components/Navbar'
 import Link from 'next/link'
 
 export default function Market(){
+  const router = useRouter()
+  const { data: session, status } = useSession() ?? {}
   const [search, setSearch] = useState('')
   const [filtered, setFiltered] = useState(properties)
+
+  useEffect(() => {
+    if(status === 'unauthenticated'){
+      router.replace('/login?redirect=/market')
+    }
+  }, [status, router])
 
   const handleSearch = () => {
     const q = search.toLowerCase().trim()
@@ -21,6 +31,14 @@ export default function Market(){
       return title.includes(q) || desc.includes(q) || hood.includes(q)
     })
     setFiltered(results)
+  }
+
+  if(status === 'loading' || status === 'unauthenticated'){
+    return (
+      <div className="container" style={{padding:40,textAlign:'center'}}>
+        <p className="landing-muted">Checking your access...</p>
+      </div>
+    )
   }
 
   return (
@@ -57,10 +75,13 @@ export default function Market(){
             {filtered.length === 0 && (
               <p className="landing-muted">No listings found.</p>
             )}
-            {filtered.map(listing => {
+            {filtered.map((listing, index) => {
               const priceZar = Number(listing.price || 0)
               return (
                 <div key={listing.id} className="landing-post">
+                  <div style={{padding:'8px 12px',background:'rgba(160,32,240,0.1)',color:'#a020f0',fontSize:'12px',fontWeight:'700',textAlign:'center'}}>
+                    Object {index + 1}
+                  </div>
                   {listing.imageDataUrl && (
                     <div className="landing-post-media">
                       <img src={listing.imageDataUrl} alt={listing.title} style={{width:'100%',height:'100%',objectFit:'cover'}} />

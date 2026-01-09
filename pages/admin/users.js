@@ -9,6 +9,15 @@ export default function UserManagement(){
   const [loading, setLoading] = useState(true)
   const [filter, setFilter] = useState('')
   const [roleFilter, setRoleFilter] = useState('all')
+  const [showCreateForm, setShowCreateForm] = useState(false)
+  const [createForm, setCreateForm] = useState({
+    name: '',
+    email: '',
+    password: '',
+    role: 'buyer'
+  })
+  const [createLoading, setCreateLoading] = useState(false)
+  const [createMessage, setCreateMessage] = useState('')
 
   useEffect(() => {
     if(status === 'authenticated' && session?.user?.email === 'admin@local.test'){
@@ -69,6 +78,41 @@ export default function UserManagement(){
     }
   }
 
+  const handleCreateUser = async (e) => {
+    e.preventDefault()
+    
+    if(!createForm.name || !createForm.email || !createForm.password){
+      setCreateMessage('Name, email, and password are required')
+      return
+    }
+
+    setCreateLoading(true)
+    setCreateMessage('')
+
+    try{
+      const res = await fetch('/api/admin/create-user', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(createForm)
+      })
+
+      const data = await res.json()
+
+      if(res.ok){
+        setCreateMessage('✓ User created successfully')
+        setCreateForm({ name: '', email: '', password: '', role: 'buyer' })
+        loadUsers()
+        setTimeout(() => setShowCreateForm(false), 1500)
+      }else{
+        setCreateMessage('✗ ' + (data.error || 'Failed to create user'))
+      }
+    }catch(e){
+      setCreateMessage('✗ Error: ' + (e.message || 'Failed to create user'))
+    }finally{
+      setCreateLoading(false)
+    }
+  }
+
   if(status === 'loading' || loading){
     return (
       <div>
@@ -117,21 +161,120 @@ export default function UserManagement(){
         <div className="card">
           <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',flexWrap:'wrap',gap:12}}>
             <h2 style={{marginTop:0}}>User Management</h2>
-            <Link href="/admin"><button className="btn btn-ghost">Back to Admin</button></Link>
+            <Link href="/admin/dashboard"><button className="btn btn-ghost">Back to Dashboard</button></Link>
           </div>
+
+          {showCreateForm && (
+            <div style={{
+              marginBottom: '20px',
+              padding: '20px',
+              backgroundColor: '#f9f9f9',
+              borderRadius: '8px',
+              border: '1px solid #ddd'
+            }}>
+              <h3 style={{ marginTop: '0 0 15px 0' }}>Create New User</h3>
+              
+              {createMessage && (
+                <div style={{
+                  padding: '10px',
+                  marginBottom: '15px',
+                  borderRadius: '4px',
+                  backgroundColor: createMessage.includes('✓') ? '#d4edda' : '#f8d7da',
+                  color: createMessage.includes('✓') ? '#155724' : '#721c24',
+                  border: '1px solid ' + (createMessage.includes('✓') ? '#c3e6cb' : '#f5c6cb'),
+                  fontSize: '14px'
+                }}>
+                  {createMessage}
+                </div>
+              )}
+
+              <form onSubmit={handleCreateUser} style={{ display: 'grid', gap: '15px' }}>
+                <input
+                  type="text"
+                  required
+                  placeholder="Full Name"
+                  value={createForm.name}
+                  onChange={(e) => setCreateForm({...createForm, name: e.target.value})}
+                  style={{ padding: '10px', borderRadius: '4px', border: '1px solid #ddd' }}
+                />
+                
+                <input
+                  type="email"
+                  required
+                  placeholder="Email"
+                  value={createForm.email}
+                  onChange={(e) => setCreateForm({...createForm, email: e.target.value})}
+                  style={{ padding: '10px', borderRadius: '4px', border: '1px solid #ddd' }}
+                />
+                
+                <input
+                  type="password"
+                  required
+                  placeholder="Password"
+                  value={createForm.password}
+                  onChange={(e) => setCreateForm({...createForm, password: e.target.value})}
+                  style={{ padding: '10px', borderRadius: '4px', border: '1px solid #ddd' }}
+                />
+                
+                <select
+                  value={createForm.role}
+                  onChange={(e) => setCreateForm({...createForm, role: e.target.value})}
+                  style={{ padding: '10px', borderRadius: '4px', border: '1px solid #ddd' }}>
+                  <option value="buyer">Buyer</option>
+                  <option value="seller">Seller</option>
+                </select>
+
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+                  <button
+                    type="submit"
+                    disabled={createLoading}
+                    style={{
+                      padding: '10px',
+                      backgroundColor: '#28a745',
+                      color: 'white',
+                      border: 'none',
+                      borderRadius: '4px',
+                      cursor: createLoading ? 'not-allowed' : 'pointer',
+                      fontWeight: 'bold',
+                      opacity: createLoading ? 0.6 : 1
+                    }}>
+                    {createLoading ? 'Creating...' : 'Create User'}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setShowCreateForm(false)
+                      setCreateMessage('')
+                      setCreateForm({ name: '', email: '', password: '', role: 'buyer' })
+                    }}
+                    style={{
+                      padding: '10px',
+                      backgroundColor: '#6c757d',
+                      color: 'white',
+                      border: 'none',
+                      borderRadius: '4px',
+                      cursor: 'pointer',
+                      fontWeight: 'bold'
+                    }}>
+                    Cancel
+                  </button>
+                </div>
+              </form>
+            </div>
+          )}
 
           <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit, minmax(150px, 1fr))',gap:16,marginTop:16}}>
             <div style={{padding:16,background:'rgba(160,32,240,0.08)',borderRadius:8,border:'1px solid rgba(160,32,240,0.2)'}}>
               <div style={{fontSize:14,color:'var(--muted)'}}>Total Users</div>
-              <div style={{fontSize:32,fontWeight:700,marginTop:4}}>{roleStats.total}</div>
+              <div style={{fontSize:32,fontWeight:700,marginTop:4}}>{users.length}</div>
             </div>
             <div style={{padding:16,background:'rgba(0,255,255,0.08)',borderRadius:8,border:'1px solid rgba(0,255,255,0.2)'}}>
               <div style={{fontSize:14,color:'var(--muted)'}}>Buyers</div>
-              <div style={{fontSize:32,fontWeight:700,marginTop:4}}>{roleStats.buyers}</div>
+              <div style={{fontSize:32,fontWeight:700,marginTop:4}}>{users.filter(u => u.role === 'buyer').length}</div>
             </div>
             <div style={{padding:16,background:'rgba(255,0,0,0.08)',borderRadius:8,border:'1px solid rgba(255,0,0,0.2)'}}>
               <div style={{fontSize:14,color:'var(--muted)'}}>Admins</div>
-              <div style={{fontSize:32,fontWeight:700,marginTop:4}}>{roleStats.admins}</div>
+              <div style={{fontSize:32,fontWeight:700,marginTop:4}}>{users.filter(u => u.role === 'admin').length}</div>
             </div>
           </div>
 
@@ -153,6 +296,19 @@ export default function UserManagement(){
               <option value="buyer">Buyers</option>
               <option value="admin">Admins</option>
             </select>
+            <button
+              onClick={() => setShowCreateForm(!showCreateForm)}
+              style={{
+                padding: '10px 20px',
+                backgroundColor: '#007bff',
+                color: 'white',
+                border: 'none',
+                borderRadius: '4px',
+                cursor: 'pointer',
+                fontWeight: 'bold'
+              }}>
+              {showCreateForm ? '× Hide' : '+ Create User'}
+            </button>
           </div>
 
           <div style={{marginTop:20,overflowX:'auto'}}>

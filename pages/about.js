@@ -71,7 +71,6 @@ export default function About(){
               Join thousands of users who trust our platform for smarter, safer buying.
             </p>
             <div style={{display:'flex',gap:12,justifyContent:'center',marginTop:20,flexWrap:'wrap'}}>
-              <Link href="/register" className="btn btn-primary">Create Account</Link>
               <Link href="/market" className="btn btn-white">Browse Market</Link>
             </div>
           </div>
@@ -88,7 +87,6 @@ export default function About(){
               <Link href="/about">About Us</Link>
               <Link href="/market">Market</Link>
               <Link href="/login">Sign in</Link>
-              <Link href="/admin-login" style={{color:'#ff3b3b',fontWeight:700}}>Admin</Link>
             </div>
           </div>
         </footer>

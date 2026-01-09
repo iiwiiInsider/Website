@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { signIn } from 'next-auth/react'
-import Navbar from '../components/Navbar'
 
 export default function CredentialsLogin(){
   const router = useRouter()
@@ -60,9 +59,15 @@ export default function CredentialsLogin(){
   }
 
   return (
-    <div style={{minHeight:'100vh',background:'radial-gradient(circle at 15% 20%, rgba(160,32,240,0.2), transparent 30%), radial-gradient(circle at 85% 10%, rgba(0,200,255,0.14), transparent 32%), #0b1220'}}>
-      <Navbar />
-      <div className="container" style={{display:'flex',justifyContent:'center',alignItems:'center',padding:'64px 16px'}}>
+    <div style={{
+      minHeight:'100vh',
+      display:'flex',
+      alignItems:'center',
+      justifyContent:'center',
+      padding:'64px 16px',
+      background:'radial-gradient(circle at 15% 20%, rgba(160,32,240,0.2), transparent 30%), radial-gradient(circle at 85% 10%, rgba(0,200,255,0.14), transparent 32%), #0b1220'
+    }}>
+      <div className="container" style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
         <div style={{maxWidth:460,width:'100%'}}>
           <div style={{background:'rgba(12,18,32,0.9)',border:'1px solid #1f2a44',borderRadius:16,padding:24,boxShadow:'0 20px 50px rgba(0,0,0,0.45)'}}>
             <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',gap:12}}>

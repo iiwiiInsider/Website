@@ -42,7 +42,7 @@ export default async function handler(req, res) {
   // POST: Create or update settings
   if (req.method === 'POST') {
     try {
-      const { primaryTool, tools, notifications, preferences, buyingSettings, privacy } = req.body || {}
+      const { primaryTool, tools, notifications, preferences, buyingSettings, privacy, paymentMethods } = req.body || {}
 
       // Validate tool selection
       if (primaryTool && !isValidTool(primaryTool)) {
@@ -68,6 +68,7 @@ export default async function handler(req, res) {
       if (preferences) userSettings.preferences = { ...userSettings.preferences, ...preferences }
       if (buyingSettings) userSettings.buyingSettings = { ...userSettings.buyingSettings, ...buyingSettings }
       if (privacy) userSettings.privacy = { ...userSettings.privacy, ...privacy }
+      if (Array.isArray(paymentMethods)) userSettings.paymentMethods = paymentMethods
 
       userSettings.updatedAt = new Date().toISOString()
 

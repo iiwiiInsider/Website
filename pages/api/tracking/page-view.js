@@ -19,9 +19,12 @@ export default async function handler(req, res){
     let pageViews = []
     try{
       const raw = await fs.readFile(pageViewsPath, 'utf8')
-      pageViews = JSON.parse(raw)
+      if(raw){
+        pageViews = JSON.parse(raw)
+      }
     }catch(e){
-      // File doesn't exist yet, start with empty array
+      // File doesn't exist yet or is invalid, start with empty array
+      console.error('Error parsing pageViews.json:', e.message)
       pageViews = []
     }
 

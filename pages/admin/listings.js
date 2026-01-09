@@ -119,11 +119,36 @@ export default function AdminListings(){
   return (
     <div>
       <Navbar />
-      <div className="container">
-        <div className="card">
+      <div className="container" style={{marginTop:24, display:'grid', gap:16}}>
+        <div className="card" style={{
+          background:'linear-gradient(135deg, #120422 0%, #241040 45%, #3a1a66 100%)',
+          color:'#e5e7ff',
+          padding:'22px',
+          border:'1px solid rgba(255,255,255,0.08)',
+          boxShadow:'0 16px 40px rgba(10, 0, 25, 0.45)',
+          backdropFilter:'blur(4px)'
+        }}>
           <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',flexWrap:'wrap',gap:12}}>
-            <h2 style={{marginTop:0}}>Manage All Listings</h2>
-            <Link href="/admin"><button className="btn btn-ghost">Back to Admin</button></Link>
+            <h2 style={{marginTop:0, marginBottom:0}}>Manage All Listings</h2>
+            <Link href="/admin" style={{ textDecoration:'none' }}>
+              <div style={{
+                display:'inline-flex',
+                alignItems:'center',
+                gap:6,
+                padding:'8px 10px',
+                borderRadius:12,
+                border:'1px solid rgba(229, 231, 235, 0.35)',
+                color:'#e5e7ff',
+                background:'rgba(255,255,255,0.04)',
+                cursor:'pointer',
+                transition:'all 0.15s ease'
+              }}
+              onMouseEnter={(e)=>{e.currentTarget.style.transform='translateY(-1px)'; e.currentTarget.style.borderColor='rgba(229, 231, 235, 0.55)'}}
+              onMouseLeave={(e)=>{e.currentTarget.style.transform='translateY(0)'; e.currentTarget.style.borderColor='rgba(229, 231, 235, 0.35)'}}>
+                <span style={{fontSize:16}}>←</span>
+                <span>Back to Dashboard</span>
+              </div>
+            </Link>
           </div>
 
           <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit, minmax(200px, 1fr))',gap:16,marginTop:16}}>

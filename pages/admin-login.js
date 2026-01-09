@@ -43,7 +43,7 @@ export default function AdminLogin(){
   // Redirect if already logged in as admin
   useEffect(() => {
     if(status === 'authenticated' && session?.user?.email === 'admin@local.test'){
-      router.push('/admin')
+      router.push('/admin/dashboard')
     }
   }, [status, session, router])
 
@@ -75,7 +75,7 @@ export default function AdminLogin(){
     setLoading(false)
     
     if(res && !res.error){
-      router.push('/admin')
+      router.push('/admin/dashboard')
     }else{
       setError('Invalid admin credentials')
     }
@@ -193,6 +193,14 @@ export default function AdminLogin(){
                 </button>
                 <a href="/" className="btn btn-ghost">Cancel</a>
               </div>
+
+              {session?.user?.email === 'admin@local.test' && (
+                <div style={{marginTop:16,textAlign:'center'}}>
+                  <a href="/admin/dashboard" style={{color:'#007bff',textDecoration:'none',fontWeight:600}}>
+                    → Go to Admin Dashboard
+                  </a>
+                </div>
+              )}
             </form>
 
             <div style={{

@@ -7,6 +7,8 @@ export default function PropertyCard({ p, claim, canClaim, onClaimed, formatPric
   const session = (useSession() ?? {}).data
   const [preferredTool, setPreferredTool] = useState('')
   const [addingToCart, setAddingToCart] = useState(false)
+  const gallery = Array.isArray(p?.imageGallery) && p.imageGallery.length ? p.imageGallery : (p?.imageDataUrl ? [p.imageDataUrl] : [])
+  const [activeIndex, setActiveIndex] = useState(0)
 
   useEffect(() => {
     const sessionRole = String(session?.user?.role || '').toLowerCase()
@@ -65,6 +67,12 @@ export default function PropertyCard({ p, claim, canClaim, onClaimed, formatPric
       setAddingToCart(false)
     }
   }
+
+  useEffect(() => {
+    if(activeIndex >= gallery.length){
+      setActiveIndex(0)
+    }
+  }, [gallery.length, activeIndex])
 
   const normalizePhone = (value) => {
     const digits = String(value || '').replace(/\D/g,'')
@@ -140,13 +148,34 @@ export default function PropertyCard({ p, claim, canClaim, onClaimed, formatPric
   return (
     <article className="property-card">
       <div className="prop-media">
-        {p?.imageDataUrl ? (
-          <img className="prop-img" src={p.imageDataUrl} alt={p.title || 'Listing'} loading="lazy" />
+        {gallery.length ? (
+          <img className="prop-img" src={gallery[activeIndex]} alt={p.title || 'Listing'} loading="lazy" />
         ) : (
           <div className="prop-placeholder">{p.title.split(' ')[0]}</div>
         )}
         <div className="price-badge">{priceText}</div>
       </div>
+      {gallery.length > 1 ? (
+        <div style={{display:'grid', gridAutoFlow:'column', gridAutoColumns:'80px', gap:8, overflowX:'auto', padding:'8px 4px 0 4px'}}>
+          {gallery.map((img, idx) => (
+            <button
+              key={idx}
+              onClick={()=>setActiveIndex(idx)}
+              style={{
+                borderRadius:10,
+                border: idx === activeIndex ? '2px solid #a855f7' : '1px solid rgba(255,255,255,0.12)',
+                padding:0,
+                background:'rgba(255,255,255,0.03)',
+                overflow:'hidden',
+                cursor:'pointer',
+                transition:'all 0.15s ease'
+              }}
+            >
+              <img src={img} alt={`thumb-${idx}`} style={{width:'100%', height:70, objectFit:'cover', display:'block'}} />
+            </button>
+          ))}
+        </div>
+      ) : null}
       <div className="prop-body">
         <div className="prop-title">{p.title}</div>
         <div className="small prop-sub">{p.neighborhood} • {p.city}</div>

@@ -25,5 +25,68 @@
     "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
     "verificationImage": null,
     "icStorageStatus": "not-collected"
+  },
+  {
+    "id": "2b8xrfw2",
+    "email": "kdbburns.za@gmail.com",
+    "timestamp": "2026-01-09T05:56:46.864Z",
+    "role": "buyer",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "verificationImage": null,
+    "icStorageStatus": "not-collected"
+  },
+  {
+    "id": "fiinab9k",
+    "email": "kdbburns.za@gmail.com",
+    "timestamp": "2026-01-09T06:12:55.138Z",
+    "role": "buyer",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "verificationImage": null,
+    "icStorageStatus": "not-collected"
+  },
+  {
+    "id": "1cjgrz64",
+    "email": "kdbburns.za@gmail.com",
+    "timestamp": "2026-01-09T06:14:15.759Z",
+    "role": "buyer",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "verificationImage": null,
+    "icStorageStatus": "not-collected"
+  },
+  {
+    "id": "2xtyy7ah",
+    "email": "kdbburns.za@gmail.com",
+    "timestamp": "2026-01-09T06:16:21.693Z",
+    "role": "buyer",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "verificationImage": null,
+    "icStorageStatus": "not-collected"
+  },
+  {
+    "id": "xfglwk80",
+    "email": "kdbburns.za@gmail.com",
+    "timestamp": "2026-01-09T06:21:26.289Z",
+    "role": "buyer",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "verificationImage": null,
+    "icStorageStatus": "not-collected"
+  },
+  {
+    "id": "7e29raat",
+    "email": "admin@local.test",
+    "timestamp": "2026-01-09T07:00:07.997Z",
+    "role": "buyer",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "verificationImage": null,
+    "icStorageStatus": "not-collected"
+  },
+  {
+    "id": "k7x1ylyb",
+    "email": "kdbburns.za@gmail.com",
+    "timestamp": "2026-01-09T07:07:30.586Z",
+    "role": "buyer",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",
+    "verificationImage": null,
+    "icStorageStatus": "not-collected"
   }
 ]

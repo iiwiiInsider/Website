@@ -971,6 +971,60 @@
       "ip": "::1",
       "time": "2026-01-08T20:23:06.966Z",
       "source": "session-detect"
+    },
+    {
+      "email": "kdbburns.za@gmail.com",
+      "id": "lotk0xrr",
+      "time": "2026-01-09T05:54:08.709Z",
+      "source": "server-signin"
+    },
+    {
+      "email": "kdbburns.za@gmail.com",
+      "id": "lotk0xrr",
+      "time": "2026-01-09T05:56:46.816Z",
+      "source": "server-signin"
+    },
+    {
+      "email": "kdbburns.za@gmail.com",
+      "id": "lotk0xrr",
+      "time": "2026-01-09T06:12:55.095Z",
+      "source": "server-signin"
+    },
+    {
+      "email": "kdbburns.za@gmail.com",
+      "id": "lotk0xrr",
+      "time": "2026-01-09T06:14:15.677Z",
+      "source": "server-signin"
+    },
+    {
+      "email": "kdbburns.za@gmail.com",
+      "id": "lotk0xrr",
+      "time": "2026-01-09T06:16:21.647Z",
+      "source": "server-signin"
+    },
+    {
+      "email": "kdbburns.za@gmail.com",
+      "id": "lotk0xrr",
+      "time": "2026-01-09T06:21:26.231Z",
+      "source": "server-signin"
+    },
+    {
+      "email": "admin@local.test",
+      "id": "admin_local",
+      "time": "2026-01-09T06:37:17.753Z",
+      "source": "server-signin"
+    },
+    {
+      "email": "admin@local.test",
+      "id": "admin_local",
+      "time": "2026-01-09T07:00:07.943Z",
+      "source": "server-signin"
+    },
+    {
+      "email": "kdbburns.za@gmail.com",
+      "id": "lotk0xrr",
+      "time": "2026-01-09T07:07:30.519Z",
+      "source": "server-signin"
     }
   ]
 }

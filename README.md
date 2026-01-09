@@ -91,4 +91,4 @@ For inquiries: support@burnprojects.com
 
 ---
 
-**BurnProjects** — Buy and sell items on the live market today
+**BurnProjects** — Buy items on the live market today
