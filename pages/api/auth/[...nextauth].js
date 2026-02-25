@@ -15,28 +15,50 @@ export const authOptions = {
       credentials: {
         email: { label: 'Email', type: 'text' },
         password: { label: 'Password', type: 'password' },
-        role: { label: 'Role', type: 'text' }
+        role: { label: 'Role', type: 'text' },
+        twoFACode: { label: '2FA Code', type: 'text' }
       },
       async authorize(credentials){
         const usersPath = path.join(process.cwd(), 'data', 'users.json')
+        const email = String(credentials?.email || '').trim().toLowerCase()
         const raw = await fs.readFile(usersPath, 'utf8').catch(()=> '[]')
         const users = JSON.parse(raw || '[]')
-        const email = String(credentials?.email || '').trim().toLowerCase()
         const user = users.find(u => u.email === email)
         if(!user) return null
-        const valid = await bcrypt.compare(credentials.password || '', user.passwordHash)
-        if(!valid) return null
-        
+
+        // 2FA code flow: validate the emailed code instead of the password
+        if(credentials?.twoFACode){
+          const tokensPath = path.join(process.cwd(), 'data', 'loginTokens.json')
+          const tokensRaw = await fs.readFile(tokensPath, 'utf8').catch(()=> '[]')
+          let tokens = []
+          try{ tokens = JSON.parse(tokensRaw || '[]') }catch{ tokens = [] }
+          const now = Date.now()
+          const token = tokens.find(t => String(t.email || '').toLowerCase() === email)
+          if(!token || (token.expiresAt || 0) <= now){
+            return null
+          }
+          if(String(credentials.twoFACode).trim() !== String(token.code)){
+            return null
+          }
+          // Consume the token
+          const remaining = tokens.filter(t => String(t.email || '').toLowerCase() !== email)
+          await fs.writeFile(tokensPath, JSON.stringify(remaining, null, 2))
+        } else {
+          // Password flow (used by admin local login and backwards-compat)
+          const valid = await bcrypt.compare(credentials.password || '', user.passwordHash)
+          if(!valid) return null
+        }
+
         // Use the role from credentials if provided, otherwise fall back to user's stored role
         const selectedRole = credentials?.role || user.role || 'buyer'
-        
+
         // Update user's role in database if it changed
         if(selectedRole !== user.role){
           user.role = selectedRole
           const updatedUsers = users.map(u => u.email === email ? user : u)
           await fs.writeFile(usersPath, JSON.stringify(updatedUsers, null, 2))
         }
-        
+
         return { id: user.id, name: user.name, email: user.email, role: selectedRole }
       }
     }),
