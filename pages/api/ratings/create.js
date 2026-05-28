@@ -34,6 +34,11 @@ export default async function handler(req, res) {
         return res.status(400).json({ error: 'Valid agent email and rating (1-5) required' })
       }
 
+      const unsafeKey = String(agentEmail).trim()
+      if (unsafeKey === '__proto__' || unsafeKey === 'constructor' || unsafeKey === 'prototype') {
+        return res.status(400).json({ error: 'Invalid agent email' })
+      }
+
       const ratings = await readRatings()
 
       if (!ratings[agentEmail]) {
